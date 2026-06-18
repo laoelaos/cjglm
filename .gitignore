@@ -1,0 +1,5 @@
+opencode_skill/
+.opencode/
+references/
+.cache/
+.vscode/
