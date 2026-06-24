@@ -148,3 +148,27 @@ extend<Q> Vec2<Bool, Q> where Q <: Qualifier {
     public func logicalAnd(other: Vec2<Bool, Q>): Vec2<Bool, Q> { Vec2(this.x && other.x, this.y && other.y) }
     public func logicalOr(other: Vec2<Bool, Q>): Vec2<Bool, Q> { Vec2(this.x || other.x, this.y || other.y) }
 }
+
+extend<T, Q> Vec2<T, Q> where T <: Number<T>, Q <: Qualifier {
+    @OverflowWrapping
+    public operator func *(m: Mat2x2<T, Q>): Vec2<T, Q> {
+        Vec2(this.x * m.c0.x + this.y * m.c0.y, this.x * m.c1.x + this.y * m.c1.y)
+    }
+
+    @OverflowWrapping
+    public operator func *(m: Mat3x2<T, Q>): Vec3<T, Q> {
+        Vec3(
+            this.x * m.c0.x + this.y * m.c0.y,
+            this.x * m.c1.x + this.y * m.c1.y,
+            this.x * m.c2.x + this.y * m.c2.y)
+    }
+
+    @OverflowWrapping
+    public operator func *(m: Mat4x2<T, Q>): Vec4<T, Q> {
+        Vec4(
+            this.x * m.c0.x + this.y * m.c0.y,
+            this.x * m.c1.x + this.y * m.c1.y,
+            this.x * m.c2.x + this.y * m.c2.y,
+            this.x * m.c3.x + this.y * m.c3.y)
+    }
+}

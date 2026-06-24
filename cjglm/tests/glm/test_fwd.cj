@@ -260,3 +260,125 @@ func testFwdFamilyComments(): Unit {
     }
 }
 
+// === Matrix alias tests for T9 ===
+
+@Test
+func testFwdMat2x2Alias(): Unit {
+    let m: Mat2x2 = Mat2x2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(m.c0.x, Float32(1.0))
+    @Expect(m.c1.y, Float32(4.0))
+}
+
+@Test
+func testFwdMat3x3Alias(): Unit {
+    let m: Mat3x3 = Mat3x3(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0), Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0), Float32(9.0))
+    @Expect(m.c0.x, Float32(1.0))
+    @Expect(m.c2.z, Float32(9.0))
+}
+
+@Test
+func testFwdMat4x4Alias(): Unit {
+    let m: Mat4x4 = Mat4x4(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0), Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0), Float32(9.0), Float32(10.0), Float32(11.0), Float32(12.0), Float32(13.0), Float32(14.0), Float32(15.0), Float32(16.0))
+    @Expect(m.c0.x, Float32(1.0))
+    @Expect(m.c3.w, Float32(16.0))
+}
+
+@Test
+func testFwdMatShortAliases(): Unit {
+    let m2: mat2 = mat2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(m2.c0.x, Float32(1.0))
+    let m3: mat3 = mat3(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0), Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0), Float32(9.0))
+    @Expect(m3.c2.z, Float32(9.0))
+    let m4: mat4 = mat4(Float32(1.0))
+    @Expect(m4.c3.w, Float32(1.0))
+}
+
+@Test
+func testFwdDMat2x2Alias(): Unit {
+    let m: DMat2x2 = DMat2x2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(m.c0.x, Float64(1.0))
+    @Expect(m.c1.y, Float64(4.0))
+}
+
+@Test
+func testFwdDMat4x4Alias(): Unit {
+    let m: DMat4x4 = DMat4x4(Float64(1.0))
+    @Expect(m.c3.w, Float64(1.0))
+}
+
+@Test
+func testFwdDMatShortAliases(): Unit {
+    let m2: dmat2 = dmat2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(m2.c0.x, Float64(1.0))
+    let m4: dmat4 = dmat4(Float64(1.0))
+    @Expect(m4.c0.x, Float64(1.0))
+}
+
+@Test
+func testFwdHighpmat2Alias(): Unit {
+    let m: Highpmat2 = Highpmat2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(m.c0.x, Float32(1.0))
+}
+
+@Test
+func testFwdMediumpmat2Alias(): Unit {
+    let m: Mediumpmat2 = Mediumpmat2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(m.c0.x, Float32(1.0))
+}
+
+@Test
+func testFwdLowpmat2Alias(): Unit {
+    let m: Lowpmat2 = Lowpmat2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(m.c0.x, Float32(1.0))
+}
+
+@Test
+func testFwdHighpdmat2Alias(): Unit {
+    let m: Highpdmat2 = Highpdmat2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(m.c0.x, Float64(1.0))
+}
+
+@Test
+func testFwdMediumpdmat2Alias(): Unit {
+    let m: Mediumpdmat2 = Mediumpdmat2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(m.c0.x, Float64(1.0))
+}
+
+@Test
+func testFwdLowpdmat2Alias(): Unit {
+    let m: Lowpdmat2 = Lowpdmat2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(m.c0.x, Float64(1.0))
+}
+
+@Test
+func testFwdMatAliasAndGenericCompatible(): Unit {
+    let alias: Mat2x2 = Mat2x2(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    let generic: detail.Mat2x2<Float32, PackedHighp> = alias
+    @Expect(generic.c0.x, Float32(1.0))
+    @Expect(generic.c1.y, Float32(4.0))
+}
+
+@Test
+func testFwdDMatAliasAndGenericCompatible(): Unit {
+    let alias: DMat2x2 = DMat2x2(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    let generic: detail.Mat2x2<Float64, PackedHighp> = alias
+    @Expect(generic.c0.x, Float64(1.0))
+    @Expect(generic.c1.y, Float64(4.0))
+}
+
+@Test
+func testFwdMat4x4IndexAccess(): Unit {
+    let m: Mat4x4 = Mat4x4(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0), Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0), Float32(9.0), Float32(10.0), Float32(11.0), Float32(12.0), Float32(13.0), Float32(14.0), Float32(15.0), Float32(16.0))
+    @Expect(m[Int64(0)].x, Float32(1.0))
+    @Expect(m[Int64(3)].w, Float32(16.0))
+}
+
+@Test
+func testFwdMatFamilyComments(): Unit {
+    let content = readFwdSource()
+    let families = ["Mat", "DMat", "HighpMat", "MediumpMat", "LowpMat", "HighpDMat", "MediumpDMat", "LowpDMat"]
+    for (fam in families) {
+        @Expect(content.contains("// === ${fam} family ==="), true)
+    }
+}
+

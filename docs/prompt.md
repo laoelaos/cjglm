@@ -51,17 +51,17 @@ harness\redeliberations\202606221209_OOD_stage2_migration_v2\iteration_history.m
 ### ood实现
 启动审议式实现流程，完成：
 
-@docs\02_ood_phase0.md该OOD设计
+@docs\04_ood_phase2.md该OOD设计
 项目根目录应为：@cjglm，文档在：@docs，参考项目在：@references\glm-1.0.3
 项目实施历史中因仓颉限制导致的实施偏差在：@docs\deviations.md
-本次实施中的偏差需要依据偏差文档开头的指示添加到相应位置。
+需要提示 Agent 本次实施中的偏差需要依据偏差文档开头的指示添加到相应位置。
 在启动 Plan Agent 时候需要提示其需要在 plan.md 开头添加详细的实施路线表格，之后每次进展打勾确认
 
 在流程启动阶段，不要尝试读取文档和代码，直接开始
 ### 修复问题
 启动审议式实现流程，完成：
 
-修复 @docs\diag\impl\01_diag.md 该审议文件中的问题，
+修复 @docs\diag\impl\02_diag.md 该审议文件中的问题，
 项目根目录应为：@cjglm，OOD文档：@docs\02_ood_phase0.md，参考项目在：@references\glm-1.0.3
 项目实施历史中因仓颉限制导致的实施偏差在：@docs\deviations.md
 本次实施中的偏差需要依据偏差文档开头的指示添加到相应位置。
@@ -73,8 +73,8 @@ harness\redeliberations\202606221209_OOD_stage2_migration_v2\iteration_history.m
 
 ### 审查
 启动审议式代码审查流程，从当前分支到main分支：
-依据 @Docs\03_ood.md 该OOD设计。
-> 需要注意的是，以OOD文档为主，但OOD文档中也可能存在矛盾，需要仔细分辨。
+依据：@docs\04_ood_phase2.md 该OOD设计。
+可以参考路线图：@docs\02_roadmap.md，偏差说明：@docs\deviations.md
 自行决定需要启动多少轮，每次并行启动3个agent，每个agent执行一轮，直到完成。
 ### 整理
 将所有的的 review_v{*}.md 文件中的严重和一般问题整理到 todo.md 中
@@ -88,6 +88,14 @@ harness\redeliberations\202606221209_OOD_stage2_migration_v2\iteration_history.m
 @harness\reviews\202606201155_ood_phase0_code_review\todo.md
 其中的问题，是真实存在？误报？还是OOD文档存在着矛盾、偏差、不完善或是错误？抑或是其他问题？
 实现偏差注明文档：@docs\deviations.md，OOD文档：@docs\02_ood_phase0.md，
+该OOD设计所实现的项目：@cjglm，该项目是参考项目：@references\glm-1.0.3 的迁移实现。
+
+在启动流程的过程中，不要尝试阅读文档，直接启动流程。
+### 首轮2
+启动再审议框架，执行问题定位流程，不要进入initial_artifact模式，定位：
+
+@harness\reviews\202606231847_ood_phase2_review\todo.md 其中的问题
+实现偏差注明文档：@docs\deviations.md，OOD文档：@docs\04_ood_phase2.md，
 该OOD设计所实现的项目：@cjglm，该项目是参考项目：@references\glm-1.0.3 的迁移实现。
 
 在启动流程的过程中，不要尝试阅读文档，直接启动流程。

@@ -166,3 +166,29 @@ extend<Q> Vec4<Bool, Q> where Q <: Qualifier {
     public func logicalAnd(other: Vec4<Bool, Q>): Vec4<Bool, Q> { Vec4(this.x && other.x, this.y && other.y, this.z && other.z, this.w && other.w) }
     public func logicalOr(other: Vec4<Bool, Q>): Vec4<Bool, Q> { Vec4(this.x || other.x, this.y || other.y, this.z || other.z, this.w || other.w) }
 }
+
+extend<T, Q> Vec4<T, Q> where T <: Number<T>, Q <: Qualifier {
+    @OverflowWrapping
+    public operator func *(m: Mat2x4<T, Q>): Vec2<T, Q> {
+        Vec2(
+            this.x * m.c0.x + this.y * m.c0.y + this.z * m.c0.z + this.w * m.c0.w,
+            this.x * m.c1.x + this.y * m.c1.y + this.z * m.c1.z + this.w * m.c1.w)
+    }
+
+    @OverflowWrapping
+    public operator func *(m: Mat3x4<T, Q>): Vec3<T, Q> {
+        Vec3(
+            this.x * m.c0.x + this.y * m.c0.y + this.z * m.c0.z + this.w * m.c0.w,
+            this.x * m.c1.x + this.y * m.c1.y + this.z * m.c1.z + this.w * m.c1.w,
+            this.x * m.c2.x + this.y * m.c2.y + this.z * m.c2.z + this.w * m.c2.w)
+    }
+
+    @OverflowWrapping
+    public operator func *(m: Mat4x4<T, Q>): Vec4<T, Q> {
+        Vec4(
+            this.x * m.c0.x + this.y * m.c0.y + this.z * m.c0.z + this.w * m.c0.w,
+            this.x * m.c1.x + this.y * m.c1.y + this.z * m.c1.z + this.w * m.c1.w,
+            this.x * m.c2.x + this.y * m.c2.y + this.z * m.c2.z + this.w * m.c2.w,
+            this.x * m.c3.x + this.y * m.c3.y + this.z * m.c3.z + this.w * m.c3.w)
+    }
+}
