@@ -50,12 +50,34 @@ def main():
                 lines.append(f'public type {alias_name} = detail.{vec_type}<{family_type}, {prec_type}>')
     lines.append('')
 
+    # === Quat family (FQuat is Float32 default-precision only, same as Quat) ===
+    QUAT_BASE = {'Quat': 'Float32', 'DQuat': 'Float64'}
+    QUAT_PRECISIONS = [('', 'PackedHighp'), ('Highp', 'PackedHighp'),
+                       ('Mediump', 'PackedMediump'), ('Lowp', 'PackedLowp')]
+    lines.append('// === Quat family ===')
+    for prec_prefix, prec_type in QUAT_PRECISIONS:
+        for family_name, family_type in QUAT_BASE.items():
+            alias_name = f'{prec_prefix}{family_name}'
+            lines.append(f'public type {alias_name} = detail.Quat<{family_type}, {prec_type}>')
+    # FQuat = Quat (Float32), default precision only — no precision prefix variants
+    lines.append(f'public type FQuat = detail.Quat<Float32, PackedHighp>')
+    lines.append('')
+
     content = '\n'.join(lines)
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.join(script_dir, '..', OUTPUT)
     output_path = os.path.normpath(output_path)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
+    newline = '\n'
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, 'rb') as f:
+                existing = f.read()
+            if b'\r\n' in existing:
+                newline = '\r\n'
+        except Exception:
+            pass
+    with open(output_path, 'w', encoding='utf-8', newline=newline) as f:
         f.write(content)
     print(f'Generated {output_path}')
 

@@ -382,3 +382,103 @@ func testFwdMatFamilyComments(): Unit {
     }
 }
 
+// === Phase 3 — Quat family alias tests ===
+
+@Test
+func testFwdQuatAlias(): Unit {
+    let q: Quat = Quat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(q.x, Float32(1.0))
+    @Expect(q.y, Float32(2.0))
+    @Expect(q.z, Float32(3.0))
+    @Expect(q.w, Float32(4.0))
+}
+
+@Test
+func testFwdFQuatAlias(): Unit {
+    let q: FQuat = FQuat(Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0))
+    @Expect(q.x, Float32(5.0))
+    @Expect(q.w, Float32(8.0))
+}
+
+@Test
+func testFwdDQuatAlias(): Unit {
+    let q: DQuat = DQuat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(q.z, Float64(3.0))
+    @Expect(q.w, Float64(4.0))
+}
+
+@Test
+func testFwdHighpQuatAlias(): Unit {
+    let q: HighpQuat = HighpQuat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(q.w, Float32(4.0))
+}
+
+@Test
+func testFwdMediumpQuatAlias(): Unit {
+    let q: MediumpQuat = MediumpQuat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(q.w, Float32(4.0))
+}
+
+@Test
+func testFwdLowpQuatAlias(): Unit {
+    let q: LowpQuat = LowpQuat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    @Expect(q.w, Float32(4.0))
+}
+
+@Test
+func testFwdHighpDQuatAlias(): Unit {
+    let q: HighpDQuat = HighpDQuat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(q.w, Float64(4.0))
+}
+
+@Test
+func testFwdMediumpDQuatAlias(): Unit {
+    let q: MediumpDQuat = MediumpDQuat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(q.w, Float64(4.0))
+}
+
+@Test
+func testFwdLowpDQuatAlias(): Unit {
+    let q: LowpDQuat = LowpDQuat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    @Expect(q.w, Float64(4.0))
+}
+
+@Test
+func testFwdQuatFQuatCompatible(): Unit {
+    let alias: Quat = Quat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    let fquat: FQuat = alias
+    @Expect(fquat.x, Float32(1.0))
+}
+
+@Test
+func testFwdQuatAliasAndGenericCompatible(): Unit {
+    let alias: Quat = Quat(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0))
+    let generic: detail.Quat<Float32, PackedHighp> = alias
+    @Expect(generic.w, Float32(4.0))
+}
+
+@Test
+func testFwdQuatFamilyComments(): Unit {
+    let content = readFwdSource()
+    @Expect(content.contains("// === Quat family ==="), true)
+}
+
+@Test
+func testFwdBackupFileRemoved(): Unit {
+    let primary = exists(Path("src/fwd.cj.bak"))
+    if (primary) {
+        @Expect(false, true)
+    } else {
+        let secondary = exists(Path("cjglm/src/fwd.cj.bak"))
+        @Expect(secondary, false)
+    }
+}
+
+@Test
+func testFwdNoRemovedQuatAliases(): Unit {
+    let content = readFwdSource()
+    @Expect(content.contains("public type HighpFQuat"), false)
+    @Expect(content.contains("public type MediumpFQuat"), false)
+    @Expect(content.contains("public type LowpFQuat"), false)
+}
+

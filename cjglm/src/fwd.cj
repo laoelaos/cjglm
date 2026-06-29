@@ -323,72 +323,13 @@ public type LowpF64Vec2 = detail.Vec2<Float64, PackedLowp>
 public type LowpF64Vec3 = detail.Vec3<Float64, PackedLowp>
 public type LowpF64Vec4 = detail.Vec4<Float64, PackedLowp>
 
-// === Mat matrix family ===
-public type Mat2x2 = detail.Mat2x2<Float32, detail.PackedHighp>
-public type Mat2x3 = detail.Mat2x3<Float32, detail.PackedHighp>
-public type Mat2x4 = detail.Mat2x4<Float32, detail.PackedHighp>
-public type Mat3x2 = detail.Mat3x2<Float32, detail.PackedHighp>
-public type Mat3x3 = detail.Mat3x3<Float32, detail.PackedHighp>
-public type Mat3x4 = detail.Mat3x4<Float32, detail.PackedHighp>
-public type Mat4x2 = detail.Mat4x2<Float32, detail.PackedHighp>
-public type Mat4x3 = detail.Mat4x3<Float32, detail.PackedHighp>
-public type Mat4x4 = detail.Mat4x4<Float32, detail.PackedHighp>
-public type mat2 = Mat2x2
-public type mat3 = Mat3x3
-public type mat4 = Mat4x4
-public type mat2x3 = Mat2x3
-public type mat2x4 = Mat2x4
-public type mat3x2 = Mat3x2
-public type mat3x4 = Mat3x4
-public type mat4x2 = Mat4x2
-public type mat4x3 = Mat4x3
-
-// === DMat matrix family ===
-public type DMat2x2 = detail.Mat2x2<Float64, detail.PackedHighp>
-public type DMat2x3 = detail.Mat2x3<Float64, detail.PackedHighp>
-public type DMat2x4 = detail.Mat2x4<Float64, detail.PackedHighp>
-public type DMat3x2 = detail.Mat3x2<Float64, detail.PackedHighp>
-public type DMat3x3 = detail.Mat3x3<Float64, detail.PackedHighp>
-public type DMat3x4 = detail.Mat3x4<Float64, detail.PackedHighp>
-public type DMat4x2 = detail.Mat4x2<Float64, detail.PackedHighp>
-public type DMat4x3 = detail.Mat4x3<Float64, detail.PackedHighp>
-public type DMat4x4 = detail.Mat4x4<Float64, detail.PackedHighp>
-public type dmat2 = DMat2x2
-public type dmat3 = DMat3x3
-public type dmat4 = DMat4x4
-public type dmat2x3 = DMat2x3
-public type dmat2x4 = DMat2x4
-public type dmat3x2 = DMat3x2
-public type dmat3x4 = DMat3x4
-public type dmat4x2 = DMat4x2
-public type dmat4x3 = DMat4x3
-
-// === HighpMat family (Float32, Highp) ===
-public type Highpmat2 = detail.Mat2x2<Float32, detail.PackedHighp>
-public type Highpmat3 = detail.Mat3x3<Float32, detail.PackedHighp>
-public type Highpmat4 = detail.Mat4x4<Float32, detail.PackedHighp>
-
-// === MediumpMat family (Float32, Mediump) ===
-public type Mediumpmat2 = detail.Mat2x2<Float32, detail.PackedMediump>
-public type Mediumpmat3 = detail.Mat3x3<Float32, detail.PackedMediump>
-public type Mediumpmat4 = detail.Mat4x4<Float32, detail.PackedMediump>
-
-// === LowpMat family (Float32, Lowp) ===
-public type Lowpmat2 = detail.Mat2x2<Float32, detail.PackedLowp>
-public type Lowpmat3 = detail.Mat3x3<Float32, detail.PackedLowp>
-public type Lowpmat4 = detail.Mat4x4<Float32, detail.PackedLowp>
-
-// === HighpDMat family (Float64, Highp) ===
-public type Highpdmat2 = detail.Mat2x2<Float64, detail.PackedHighp>
-public type Highpdmat3 = detail.Mat3x3<Float64, detail.PackedHighp>
-public type Highpdmat4 = detail.Mat4x4<Float64, detail.PackedHighp>
-
-// === MediumpDMat family (Float64, Mediump) ===
-public type Mediumpdmat2 = detail.Mat2x2<Float64, detail.PackedMediump>
-public type Mediumpdmat3 = detail.Mat3x3<Float64, detail.PackedMediump>
-public type Mediumpdmat4 = detail.Mat4x4<Float64, detail.PackedMediump>
-
-// === LowpDMat family (Float64, Lowp) ===
-public type Lowpdmat2 = detail.Mat2x2<Float64, detail.PackedLowp>
-public type Lowpdmat3 = detail.Mat3x3<Float64, detail.PackedLowp>
-public type Lowpdmat4 = detail.Mat4x4<Float64, detail.PackedLowp>
+// === Quat family ===
+public type Quat = detail.Quat<Float32, PackedHighp>
+public type DQuat = detail.Quat<Float64, PackedHighp>
+public type HighpQuat = detail.Quat<Float32, PackedHighp>
+public type HighpDQuat = detail.Quat<Float64, PackedHighp>
+public type MediumpQuat = detail.Quat<Float32, PackedMediump>
+public type MediumpDQuat = detail.Quat<Float64, PackedMediump>
+public type LowpQuat = detail.Quat<Float32, PackedLowp>
+public type LowpDQuat = detail.Quat<Float64, PackedLowp>
+public type FQuat = detail.Quat<Float32, PackedHighp>

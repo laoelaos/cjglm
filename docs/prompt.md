@@ -85,10 +85,11 @@ harness\redeliberations\202606221209_OOD_stage2_migration_v2\iteration_history.m
 ### 首轮
 启动再审议框架，执行问题定位流程，不要进入initial_artifact模式，定位：
 
-@harness\reviews\202606201155_ood_phase0_code_review\todo.md
+@harness\reviews\202606271542_glm_phase3_review\todo.md
 其中的问题，是真实存在？误报？还是OOD文档存在着矛盾、偏差、不完善或是错误？抑或是其他问题？
 实现偏差注明文档：@docs\deviations.md，OOD文档：@docs\02_ood_phase0.md，
 该OOD设计所实现的项目：@cjglm，该项目是参考项目：@references\glm-1.0.3 的迁移实现。
+你只需要输出问题定位的结果以及修改的流程和建议。
 
 在启动流程的过程中，不要尝试阅读文档，直接启动流程。
 ### 首轮2
