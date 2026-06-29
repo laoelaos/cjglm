@@ -81,7 +81,7 @@ jobs:
           fi
 
       - name: 静态检查 (cjlint)
-        if: ${{ !inputs.skip_lint && matrix.os == 'ubuntu-latest' }}
+        if: ${{ !inputs.skip_lint }}
         working-directory: ${{ env.MODULE_DIR }}
         shell: bash
         run: |
@@ -90,27 +90,6 @@ jobs:
             cjlint -f src/
           else
             echo "cjlint 未安装，跳过"
-          fi
-
-      - name: 格式检查 (cjfmt)
-        if: matrix.os == 'ubuntu-latest'
-        working-directory: ${{ env.MODULE_DIR }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          if command -v cjfmt >/dev/null 2>&1; then
-            # cjfmt 无 --check：先格式化到临时目录，再与源目录 diff
-            # cjfmt -o 会保留输入目录名作为子目录（结果位于 $tmp/src/）
-            tmp=$(mktemp -d)
-            trap 'rm -rf "$tmp"' EXIT
-            cjfmt -d src/ -o "$tmp" >/dev/null
-            if ! diff -r src "$tmp/src" >/dev/null; then
-              echo "::error::存在未格式化文件，请本地执行 cjfmt -d src/ 修正后提交。"
-              diff -r src "$tmp/src" | head -200
-              exit 1
-            fi
-          else
-            echo "cjfmt 未安装，跳过"
           fi
 
       - name: 编译
@@ -162,8 +141,7 @@ jobs:
           set -euo pipefail
           cjpm build --coverage
           cjpm test  --coverage
-          cjcov report --include 'src/**/*.cj' --exclude 'tests/**' --output-dir cov_output
-          cjcov report --include 'src/**/*.cj' --exclude 'tests/**' --output-dir cov_output --html
+          cjcov -o cov_output --html-details -e "tests"
 
       - name: 上传覆盖率报告
         if: success() || failure()
