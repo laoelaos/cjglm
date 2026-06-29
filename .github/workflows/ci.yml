@@ -1,0 +1,190 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+    tags: ['v*']
+  pull_request:
+    branches: [main, master, develop]
+  workflow_dispatch:
+    inputs:
+      cjc_version:
+        description: 'CangJie 编译器版本（留空则从 cjpm.toml 读取）'
+        required: false
+        default: ''
+      skip_lint:
+        description: '跳过 cjlint 检查'
+        required: false
+        type: boolean
+        default: false
+
+env:
+  MODULE_DIR: cjglm
+  CJC_VERSION: '1.1.0'
+  CJC_CHANNEL: 'sts'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build & Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # macOS 暂不在矩阵内：CangJie 1.1.0 内置 ld64.lld 与最新 Xcode SDK 存在
+        # 兼容性问题（参考 CI 失败记录），待工具链升级后重新加入。
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 安装 CangJie 工具链
+        uses: Zxilly/setup-cangjie@v3.2.0
+        with:
+          channel: ${{ env.CJC_CHANNEL }}
+          version: ${{ inputs.cjc_version != '' && inputs.cjc_version || 'auto' }}
+          components: stdx
+
+      - name: 验证工具链
+        shell: bash
+        run: |
+          set -euo pipefail
+          cjc --version
+          cjpm --version
+          command -v cjlint >/dev/null 2>&1 && cjlint -v || echo "cjlint 不可用（可选）"
+          command -v cjfmt  >/dev/null 2>&1 && cjfmt  -v || echo "cjfmt  不可用（可选）"
+          command -v cjcov  >/dev/null 2>&1 && cjcov  -v || echo "cjcov  不可用（可选）"
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 生成 fwd.cj 别名
+        working-directory: ${{ env.MODULE_DIR }}
+        run: python scripts/gen_fwd_aliases.py
+
+      - name: 检查 fwd.cj 一致性
+        working-directory: ${{ env.MODULE_DIR }}
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain src/fwd.cj)" ]; then
+            echo "::error::src/fwd.cj 与生成结果不一致，请先本地执行 python scripts/gen_fwd_aliases.py 后提交。"
+            git diff -- src/fwd.cj | head -200
+            exit 1
+          fi
+
+      - name: 静态检查 (cjlint)
+        if: ${{ !inputs.skip_lint && matrix.os == 'ubuntu-latest' }}
+        working-directory: ${{ env.MODULE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v cjlint >/dev/null 2>&1; then
+            cjlint -f src/
+          else
+            echo "cjlint 未安装，跳过"
+          fi
+
+      - name: 格式检查 (cjfmt)
+        if: matrix.os == 'ubuntu-latest'
+        working-directory: ${{ env.MODULE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v cjfmt >/dev/null 2>&1; then
+            # cjfmt 无 --check：先格式化到临时目录，再与源目录 diff
+            # cjfmt -o 会保留输入目录名作为子目录（结果位于 $tmp/src/）
+            tmp=$(mktemp -d)
+            trap 'rm -rf "$tmp"' EXIT
+            cjfmt -d src/ -o "$tmp" >/dev/null
+            if ! diff -r src "$tmp/src" >/dev/null; then
+              echo "::error::存在未格式化文件，请本地执行 cjfmt -d src/ 修正后提交。"
+              diff -r src "$tmp/src" | head -200
+              exit 1
+            fi
+          else
+            echo "cjfmt 未安装，跳过"
+          fi
+
+      - name: 编译
+        working-directory: ${{ env.MODULE_DIR }}
+        run: cjpm build
+
+      - name: 单元测试
+        working-directory: ${{ env.MODULE_DIR }}
+        run: cjpm test
+
+      - name: 上传构建产物
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: target-${{ matrix.os }}
+          path: |
+            ${{ env.MODULE_DIR }}/target/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  coverage:
+    name: 代码覆盖率
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 CangJie 工具链
+        uses: Zxilly/setup-cangjie@v3.2.0
+        with:
+          channel: ${{ env.CJC_CHANNEL }}
+          version: ${{ inputs.cjc_version != '' && inputs.cjc_version || env.CJC_VERSION }}
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 生成 fwd.cj 别名
+        working-directory: ${{ env.MODULE_DIR }}
+        run: python scripts/gen_fwd_aliases.py
+
+      - name: 启用覆盖率编译并运行测试
+        working-directory: ${{ env.MODULE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cjpm build --coverage
+          cjpm test  --coverage
+          cjcov report --include 'src/**/*.cj' --exclude 'tests/**' --output-dir cov_output
+          cjcov report --include 'src/**/*.cj' --exclude 'tests/**' --output-dir cov_output --html
+
+      - name: 上传覆盖率报告
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: ${{ env.MODULE_DIR }}/cov_output/
+          if-no-files-found: ignore
+          retention-days: 30
+
+  build-status:
+    name: 构建状态
+    needs: build-and-test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查所有矩阵结果
+        shell: bash
+        run: |
+          if [ "${{ needs.build-and-test.result }}" != "success" ]; then
+            echo "构建或测试失败：${{ needs.build-and-test.result }}"
+            exit 1
+          fi
+          echo "所有平台构建与测试通过"
