@@ -1,11 +1,6 @@
 package glm.ext
-import glm.detail.{ Quat, Vec3, Qualifier }
-import std.math.{ FloatingPoint, sqrt }
-
-private func sqrtT<T>(x: T): T where T <: FloatingPoint<T> {
-    let x64 = (x as Float64).getOrThrow()
-    (sqrt(x64) as T).getOrThrow()
-}
+import glm.detail.{ Quat, Vec3, Qualifier, sqrtT, acos, clamp, sinT, cosT }
+import std.math.FloatingPoint
 
 public func axis<T, Q>(x: Quat<T, Q>): Vec3<T, Q>
   where T <: FloatingPoint<T> & Comparable<T>, Q <: Qualifier {
@@ -21,7 +16,15 @@ public func axis<T, Q>(x: Quat<T, Q>): Vec3<T, Q>
 }
 
 public func angle<T, Q>(x: Quat<T, Q>): T
-  where T <: FloatingPoint<T>, Q <: Qualifier { throw Exception("stub") }
+  where T <: FloatingPoint<T> & Comparable<T>, Q <: Qualifier {
+    let one = (Float64(1) as T).getOrThrow()
+    (Float64(2) as T).getOrThrow() * acos(clamp(x.w, -one, one))
+}
 
 public func angleAxis<T, Q>(angle: T, axis: Vec3<T, Q>): Quat<T, Q>
-  where T <: FloatingPoint<T>, Q <: Qualifier { throw Exception("stub") }
+  where T <: FloatingPoint<T>, Q <: Qualifier {
+    let halfAngle = angle / (Float64(2) as T).getOrThrow()
+    let s = sinT(halfAngle)
+    let c = cosT(halfAngle)
+    Quat(c, s * axis.x, s * axis.y, s * axis.z)
+}

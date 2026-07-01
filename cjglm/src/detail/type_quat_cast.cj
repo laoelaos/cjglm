@@ -1,6 +1,6 @@
 package glm.detail
 
-import std.math.{ Number, FloatingPoint, sqrt }
+import std.math.{ Number, FloatingPoint }
 
 public func mat3Cast<T, Q>(q: Quat<T, Q>): Mat3x3<T, Q>
   where T <: FloatingPoint<T>, Q <: Qualifier {
@@ -124,11 +124,6 @@ public func quatCast<T, Q>(m: Mat4x4<T, Q>): Quat<T, Q>
         Vec3<T, Q>(m.c2.x, m.c2.y, m.c2.z)
     )
     quatCast(m3)
-}
-
-private func sqrtT<T>(x: T): T where T <: FloatingPoint<T> {
-    let x64 = (x as Float64).getOrThrow()
-    (sqrt(x64) as T).getOrThrow()
 }
 
 private func zeroOrOne<T>(one: T): T where T <: Number<T> {

@@ -1,0 +1,3747 @@
+# 验证报告（v10）
+
+## 结果
+PASSED
+
+## 统计
+- 通过：435
+- 失败：0
+
+## 测试执行日志
+warning: possibly confusing line terminator
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\matrix.cj:173:51:
+
+    | 
+
+173 |       - m.c1.x * (m.c0.y * m.c2.z - m.c2.y * m.c0.z)
+
+    |                                                    ~^ 
+
+    |  __________________________________________________|
+
+174 | |     + m.c2.x * (m.c0.y * m.c1.z - m.c1.y * m.c0.z)
+
+    | |_____~ possibly confusing line terminator between ')' and '+'
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff parser`
+
+
+
+warning: possibly confusing line terminator
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\matrix.cj:185:84:
+
+    | 
+
+185 |       - m.c0.y * (m.c1.x * SubFactor00 - m.c1.z * SubFactor03 + m.c1.w * SubFactor04)
+
+    |                                                                                     ~^ 
+
+    |  ___________________________________________________________________________________|
+
+186 | |     + m.c0.z * (m.c1.x * SubFactor01 - m.c1.y * SubFactor03 + m.c1.w * SubFactor05)
+
+    | |_____~ possibly confusing line terminator between ')' and '+'
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff parser`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x4.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x3.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'std.math.Integer'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x4.cj:3:27:
+
+  | 
+
+3 | import std.math.{ Number, Integer }
+
+  |                           ^^^^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:114:28:
+
+    | 
+
+114 |     public operator func /(rhs: Mat2x2<T, Q>): Mat2x2<T, Q> { throw Exception("stub") }
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:118:28:
+
+    | 
+
+118 |     public operator func /(rhs: Mat3x3<T, Q>): Mat3x3<T, Q> { throw Exception("stub") }
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_quat.cj:120:28:
+
+    | 
+
+120 |     public operator func *(rhs: Vec3<T, Q>): Vec3<T, Q> {
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x4.cj:124:28:
+
+    | 
+
+124 |     public operator func /(rhs: Mat4x4<T, Q>): Mat4x4<T, Q> { throw Exception("stub") }
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_quat.cj:125:28:
+
+    | 
+
+125 |     public operator func *(rhs: Vec4<T, Q>): Vec4<T, Q> {
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_quat.cj:142:28:
+
+    | 
+
+142 |     public operator func *(rhs: Quat<T, Q>): Vec3<T, Q> {
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:143:58:
+
+    | 
+
+143 |     public static func fromMat<SrcQ>(m: Mat2x2<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:143:58:
+
+    | 
+
+143 |     public static func fromMat<SrcQ>(m: Mat2x2<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:148:58:
+
+    | 
+
+148 |     public static func fromMat<SrcQ>(m: Mat2x3<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'rhs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_quat.cj:149:28:
+
+    | 
+
+149 |     public operator func *(rhs: Quat<T, Q>): Vec4<T, Q> {
+
+    |                            ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:149:58:
+
+    | 
+
+149 |     public static func fromMat<SrcQ>(m: Mat2x3<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:149:58:
+
+    | 
+
+149 |     public static func fromMat<SrcQ>(m: Mat2x4<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:149:58:
+
+    | 
+
+149 |     public static func fromMat<SrcQ>(m: Mat2x2<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:153:58:
+
+    | 
+
+153 |     public static func fromMat<SrcQ>(m: Mat2x4<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:154:58:
+
+    | 
+
+154 |     public static func fromMat<SrcQ>(m: Mat3x2<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:155:58:
+
+    | 
+
+155 |     public static func fromMat<SrcQ>(m: Mat2x2<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:155:58:
+
+    | 
+
+155 |     public static func fromMat<SrcQ>(m: Mat2x3<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:155:58:
+
+    | 
+
+155 |     public static func fromMat<SrcQ>(m: Mat3x2<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:158:58:
+
+    | 
+
+158 |     public static func fromMat<SrcQ>(m: Mat3x2<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:160:58:
+
+    | 
+
+160 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:161:58:
+
+    | 
+
+161 |     public static func fromMat<SrcQ>(m: Mat2x4<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:161:58:
+
+    | 
+
+161 |     public static func fromMat<SrcQ>(m: Mat2x3<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:161:58:
+
+    | 
+
+161 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:163:58:
+
+    | 
+
+163 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:165:58:
+
+    | 
+
+165 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:167:58:
+
+    | 
+
+167 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:167:58:
+
+    | 
+
+167 |     public static func fromMat<SrcQ>(m: Mat2x4<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:167:58:
+
+    | 
+
+167 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:168:58:
+
+    | 
+
+168 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:170:58:
+
+    | 
+
+170 |     public static func fromMat<SrcQ>(m: Mat4x2<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:172:58:
+
+    | 
+
+172 |     public static func fromMat<SrcQ>(m: Mat4x2<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:172:58:
+
+    | 
+
+172 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:173:58:
+
+    | 
+
+173 |     public static func fromMat<SrcQ>(m: Mat3x2<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x4.cj:173:58:
+
+    | 
+
+173 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat3x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:173:58:
+
+    | 
+
+173 |     public static func fromMat<SrcQ>(m: Mat4x2<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:176:58:
+
+    | 
+
+176 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat3x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:176:58:
+
+    | 
+
+176 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:177:58:
+
+    | 
+
+177 |     public static func fromMat<SrcQ>(m: Mat4x2<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:178:58:
+
+    | 
+
+178 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:178:58:
+
+    | 
+
+178 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:179:58:
+
+    | 
+
+179 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x3.cj:179:58:
+
+    | 
+
+179 |     public static func fromMat<SrcQ>(m: Mat3x3<T, SrcQ>, one: T): Mat4x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:181:58:
+
+    | 
+
+181 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat2x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:182:58:
+
+    | 
+
+182 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:183:58:
+
+    | 
+
+183 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat2x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:184:58:
+
+    | 
+
+184 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat2x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:185:58:
+
+    | 
+
+185 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x3.cj:185:58:
+
+    | 
+
+185 |     public static func fromMat<SrcQ>(m: Mat3x4<T, SrcQ>, one: T): Mat4x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x4.cj:185:58:
+
+    | 
+
+185 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat3x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:187:58:
+
+    | 
+
+187 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat3x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:187:58:
+
+    | 
+
+187 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat3x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x4.cj:191:58:
+
+    | 
+
+191 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat3x4<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:191:58:
+
+    | 
+
+191 |     public static func fromMat<SrcQ>(m: Mat4x3<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:192:58:
+
+    | 
+
+192 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat3x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:192:71:
+
+    | 
+
+192 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat2x3<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:196:58:
+
+    | 
+
+196 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat4x2<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:196:71:
+
+    | 
+
+196 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat2x4<U, P>, one: T): Mat2x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x3.cj:197:58:
+
+    | 
+
+197 |     public static func fromMat<SrcQ>(m: Mat4x4<T, SrcQ>, one: T): Mat4x3<T, Q>
+
+    |                                                          ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:197:71:
+
+    | 
+
+197 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat2x4<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:202:71:
+
+    | 
+
+202 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x2<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:207:71:
+
+    | 
+
+207 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x3<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:207:71:
+
+    | 
+
+207 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x3<U, P>, one: T): Mat2x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:212:71:
+
+    | 
+
+212 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x4<U, P>, one: T): Mat2x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:212:71:
+
+    | 
+
+212 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x4<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:214:71:
+
+    | 
+
+214 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x3<U, P>, one: T): Mat3x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:217:71:
+
+    | 
+
+217 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x4<U, P>, one: T): Mat2x4<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:217:71:
+
+    | 
+
+217 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x2<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:219:71:
+
+    | 
+
+219 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x4<U, P>, one: T): Mat3x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:222:71:
+
+    | 
+
+222 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x3<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:223:71:
+
+    | 
+
+223 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x3<U, P>, one: T): Mat2x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:224:71:
+
+    | 
+
+224 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x2<U, P>, one: T): Mat3x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:225:71:
+
+    | 
+
+225 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat3x4<U, P>, one: T): Mat3x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x2.cj:227:71:
+
+    | 
+
+227 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat2x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x3.cj:228:71:
+
+    | 
+
+228 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat2x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:229:71:
+
+    | 
+
+229 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x3<U, P>, one: T): Mat3x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x2.cj:234:71:
+
+    | 
+
+234 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat3x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat2x4.cj:234:71:
+
+    | 
+
+234 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat2x4<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:236:71:
+
+    | 
+
+236 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x3<U, P>, one: T): Mat3x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x3.cj:241:71:
+
+    | 
+
+241 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat3x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:241:71:
+
+    | 
+
+241 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x3<U, P>, one: T): Mat4x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat3x4.cj:242:71:
+
+    | 
+
+242 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat3x4<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x2.cj:246:71:
+
+    | 
+
+246 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat4x2<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'one'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\detail\type_mat4x3.cj:248:71:
+
+    | 
+
+248 |     public static func fromMat<U, P>(conv: (U) -> T, m: Mat4x4<U, P>, one: T): Mat4x3<T, Q>
+
+    |                                                                       ^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+94 warnings generated, 94 warnings printed.
+
+warning: imported decl 'Mat2x2' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float2x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double2x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat2x3' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float2x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double2x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat2x4' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float2x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double2x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat2x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat3x2' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float3x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double3x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat3x3' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float3x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double3x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat3x4' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float3x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double3x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat3x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat4x2' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float4x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double4x2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x2
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat4x3' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float4x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double4x3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x3
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Mat4x4' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_float4x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_double4x4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Mat4x4
+
+  |                          ^^^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Vec1' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_float1.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec1
+
+  |                          ^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_double1.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec1
+
+  |                          ^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Vec2' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_float2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec2
+
+  |                          ^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_double2.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec2
+
+  |                          ^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Vec3' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_float3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec3
+
+  |                          ^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_double3.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec3
+
+  |                          ^^^^ 
+
+  | 
+
+
+
+warning: imported decl 'Vec4' is conflicted with other import
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_float4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec4
+
+  |                          ^^^^ 
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+
+note: The previous was imported here
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_double4.cj:2:26:
+
+  | 
+
+2 | public import glm.detail.Vec4
+
+  |                          ^^^^ 
+
+  | 
+
+
+
+warning: unused import 'glm.detail.cosT'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_clip_space.cj:2:46:
+
+  | 
+
+2 | import glm.detail.{ Mat4x4, Vec4, Qualifier, cosT, sinT, tanT, epsilon }
+
+  |                                              ^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'glm.detail.sinT'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_clip_space.cj:2:52:
+
+  | 
+
+2 | import glm.detail.{ Mat4x4, Vec4, Qualifier, cosT, sinT, tanT, epsilon }
+
+  |                                                    ^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused import 'glm.detail.cosT'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_common.cj:2:80:
+
+  | 
+
+2 | import glm.detail.{ Quat, Vec4, Qualifier, assert, clamp, acos, epsilon, sinT, cosT, dot }
+
+  |                                                                                ^^^^ unused import
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'q'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_exponential.cj:4:23:
+
+  | 
+
+4 | public func exp<T, Q>(q: Quat<T, Q>): Quat<T, Q>
+
+  |                       ^ unused variable
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'q'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_exponential.cj:6:23:
+
+  | 
+
+6 | public func log<T, Q>(q: Quat<T, Q>): Quat<T, Q>
+
+  |                       ^ unused variable
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_exponential.cj:8:23:
+
+  | 
+
+8 | public func pow<T, Q>(x: Quat<T, Q>, y: T): Quat<T, Q>
+
+  |                       ^ unused variable
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+ ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_exponential.cj:8:38:
+
+  | 
+
+8 | public func pow<T, Q>(x: Quat<T, Q>, y: T): Quat<T, Q>
+
+  |                                      ^ unused variable
+
+  | 
+
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+  ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_exponential.cj:10:24:
+
+   | 
+
+10 | public func sqrt<T, Q>(x: Quat<T, Q>): Quat<T, Q>
+
+   |                        ^ unused variable
+
+   | 
+
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'zero'
+
+  ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_transform.cj:44:9:
+
+   | 
+
+44 |     let zero = (Float64(0) as T).getOrThrow()
+
+   |         ^^^^ unused variable
+
+   | 
+
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'zero'
+
+  ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_common.cj:45:9:
+
+   | 
+
+45 |     let zero = (Float64(0) as T).getOrThrow()
+
+   |         ^^^^ unused variable
+
+   | 
+
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'zero'
+
+  ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\quaternion_common.cj:61:9:
+
+   | 
+
+61 |     let zero = (Float64(0) as T).getOrThrow()
+
+   |         ^^^^ unused variable
+
+   | 
+
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:199:25:
+
+    | 
+
+199 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:199:40:
+
+    | 
+
+199 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:199:55:
+
+    | 
+
+199 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:202:25:
+
+    | 
+
+202 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:202:40:
+
+    | 
+
+202 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:202:55:
+
+    | 
+
+202 | public func equal<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:205:28:
+
+    | 
+
+205 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:205:43:
+
+    | 
+
+205 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:205:58:
+
+    | 
+
+205 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Int64): Vec1<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:208:28:
+
+    | 
+
+208 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:208:43:
+
+    | 
+
+208 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:208:58:
+
+    | 
+
+208 | public func notEqual<T, Q>(x: Vec1<T, Q>, y: Vec1<T, Q>, ULPs: Vec1<Int64, Q>): Vec1<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:213:25:
+
+    | 
+
+213 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:213:40:
+
+    | 
+
+213 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:213:55:
+
+    | 
+
+213 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:216:25:
+
+    | 
+
+216 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:216:40:
+
+    | 
+
+216 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:216:55:
+
+    | 
+
+216 | public func equal<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:219:28:
+
+    | 
+
+219 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:219:43:
+
+    | 
+
+219 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:219:58:
+
+    | 
+
+219 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Int64): Vec2<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:222:28:
+
+    | 
+
+222 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:222:43:
+
+    | 
+
+222 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:222:58:
+
+    | 
+
+222 | public func notEqual<T, Q>(x: Vec2<T, Q>, y: Vec2<T, Q>, ULPs: Vec2<Int64, Q>): Vec2<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:227:25:
+
+    | 
+
+227 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:227:40:
+
+    | 
+
+227 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:227:55:
+
+    | 
+
+227 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:230:25:
+
+    | 
+
+230 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:230:40:
+
+    | 
+
+230 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:230:55:
+
+    | 
+
+230 | public func equal<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:233:28:
+
+    | 
+
+233 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:233:43:
+
+    | 
+
+233 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:233:58:
+
+    | 
+
+233 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Int64): Vec3<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:236:28:
+
+    | 
+
+236 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:236:43:
+
+    | 
+
+236 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:236:58:
+
+    | 
+
+236 | public func notEqual<T, Q>(x: Vec3<T, Q>, y: Vec3<T, Q>, ULPs: Vec3<Int64, Q>): Vec3<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:241:25:
+
+    | 
+
+241 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:241:40:
+
+    | 
+
+241 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:241:55:
+
+    | 
+
+241 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:244:25:
+
+    | 
+
+244 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                         ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:244:40:
+
+    | 
+
+244 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                                        ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:244:55:
+
+    | 
+
+244 | public func equal<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:247:28:
+
+    | 
+
+247 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:247:43:
+
+    | 
+
+247 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:247:58:
+
+    | 
+
+247 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Int64): Vec4<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'x'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:250:28:
+
+    | 
+
+250 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                            ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'y'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:250:43:
+
+    | 
+
+250 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                                           ^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'ULPs'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\vector_relational.cj:250:58:
+
+    | 
+
+250 | public func notEqual<T, Q>(x: Vec4<T, Q>, y: Vec4<T, Q>, ULPs: Vec4<Int64, Q>): Vec4<Bool, Q>
+
+    |                                                          ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'zNear'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_clip_space.cj:277:61:
+
+    | 
+
+277 | func perspectiveFovImpl<T, Q>(fovy: T, width: T, height: T, zNear: T, zFar: T, depthScale: T, depthOffset: T): Mat4x4<T, Q>
+
+    |                                                             ^^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+warning: unused variable:'zFar'
+
+   ==> C:\Develop\Software\cjglm_wp\cjglm\src\ext\matrix_clip_space.cj:277:71:
+
+    | 
+
+277 | func perspectiveFovImpl<T, Q>(fovy: T, width: T, height: T, zNear: T, zFar: T, depthScale: T, depthOffset: T): Mat4x4<T, Q>
+
+    |                                                                       ^^^^ unused variable
+
+    | 
+
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+
+
+74 warnings generated, 74 warnings printed.
+
+?25l78
+7878?25h--------------------------------------------------------------------------------------------------
+TP: glm.detail, time elapsed: 30150200 ns, RESULT:
+    TCS: TestCase_testComputeVecAdd1, time elapsed: 3090300 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAdd1 (1807200 ns)
+    TCS: TestCase_testComputeVecSub2, time elapsed: 309400 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecSub2 (264400 ns)
+    TCS: TestCase_testComputeVecMul3, time elapsed: 77600 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecMul3 (28700 ns)
+    TCS: TestCase_testComputeVecMod1, time elapsed: 49500 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecMod1 (24500 ns)
+    TCS: TestCase_testComputeVecMod4, time elapsed: 55400 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecMod4 (22900 ns)
+    TCS: TestCase_testComputeVecAnd1, time elapsed: 40700 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAnd1 (18800 ns)
+    TCS: TestCase_testComputeVecAnd3, time elapsed: 40700 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAnd3 (15100 ns)
+    TCS: TestCase_testComputeVecOr1, time elapsed: 419500 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecOr1 (394900 ns)
+    TCS: TestCase_testComputeVecOr2, time elapsed: 75900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecOr2 (30300 ns)
+    TCS: TestCase_testComputeVecXor1, time elapsed: 39800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecXor1 (18200 ns)
+    TCS: TestCase_testComputeVecXor4, time elapsed: 47900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecXor4 (17400 ns)
+    TCS: TestCase_testComputeVecShiftLeft1, time elapsed: 250000 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecShiftLeft1 (223900 ns)
+    TCS: TestCase_testComputeVecShiftLeft3, time elapsed: 58100 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecShiftLeft3 (26400 ns)
+    TCS: TestCase_testComputeVecShiftRight1, time elapsed: 31400 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecShiftRight1 (10900 ns)
+    TCS: TestCase_testComputeVecShiftRight4, time elapsed: 38800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecShiftRight4 (20200 ns)
+    TCS: TestCase_testComputeVecEqual1, time elapsed: 221500 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecEqual1 (200000 ns)
+    TCS: TestCase_testComputeVecNequal4, time elapsed: 54200 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecNequal4 (27600 ns)
+    TCS: TestCase_testComputeVecBitwiseNot1, time elapsed: 198800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecBitwiseNot1 (183300 ns)
+    TCS: TestCase_testComputeVecBitwiseNot3, time elapsed: 35100 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecBitwiseNot3 (11700 ns)
+    TCS: TestCase_testComputeVecAdd4, time elapsed: 21800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAdd4 (9300 ns)
+    TCS: TestCase_testComputeVecSub1, time elapsed: 19800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecSub1 (7900 ns)
+    TCS: TestCase_testComputeVecSub3, time elapsed: 21900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecSub3 (8300 ns)
+    TCS: TestCase_testComputeVecMul1, time elapsed: 18200 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecMul1 (7800 ns)
+    TCS: TestCase_testComputeVecMul2, time elapsed: 24200 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecMul2 (8400 ns)
+    TCS: TestCase_testComputeVecDiv1, time elapsed: 18900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecDiv1 (7600 ns)
+    TCS: TestCase_testComputeVecDiv2, time elapsed: 29000 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecDiv2 (10300 ns)
+    TCS: TestCase_testComputeVecDiv4, time elapsed: 26400 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecDiv4 (10500 ns)
+    TCS: TestCase_testComputeVecEqual2, time elapsed: 24000 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecEqual2 (7500 ns)
+    TCS: TestCase_testComputeVecEqual3, time elapsed: 16800 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecEqual3 (5400 ns)
+    TCS: TestCase_testComputeVecEqual4, time elapsed: 23200 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecEqual4 (7400 ns)
+    TCS: TestCase_testComputeVecNequal1, time elapsed: 16300 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecNequal1 (5900 ns)
+    TCS: TestCase_testComputeVecNequal2, time elapsed: 20000 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecNequal2 (4700 ns)
+    TCS: TestCase_testComputeVecBitwiseNot4, time elapsed: 22300 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecBitwiseNot4 (10600 ns)
+    TCS: TestCase_testComputeVecAddFloat32, time elapsed: 30200 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAddFloat32 (19500 ns)
+    TCS: TestCase_testComputeVecAddFloat32Vec3, time elapsed: 26900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecAddFloat32Vec3 (14500 ns)
+    TCS: TestCase_testComputeVecSubFloat32, time elapsed: 24900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecSubFloat32 (12000 ns)
+    TCS: TestCase_testComputeVecSubFloat32Vec4, time elapsed: 21900 ns, RESULT:
+    [ PASSED ] CASE: testComputeVecSubFloat32Vec4 (10700 ns)
+    TCS: TestCase_testComputeEqualInt32Equal, time elapsed: 22500 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualInt32Equal (11400 ns)
+    TCS: TestCase_testComputeEqualInt32NotEqual, time elapsed: 16500 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualInt32NotEqual (5900 ns)
+    TCS: TestCase_testComputeEqualFloat32Equal, time elapsed: 21100 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat32Equal (6600 ns)
+    TCS: TestCase_testComputeEqualFloat32NotEqual, time elapsed: 16400 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat32NotEqual (5100 ns)
+    TCS: TestCase_testComputeEqualFloat64Equal, time elapsed: 16500 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat64Equal (5500 ns)
+    TCS: TestCase_testComputeEqualFloat64NotEqual, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat64NotEqual (4100 ns)
+    TCS: TestCase_testComputeEqualBoolEqual, time elapsed: 17000 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualBoolEqual (4900 ns)
+    TCS: TestCase_testComputeEqualBoolNotEqual, time elapsed: 18900 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualBoolNotEqual (4100 ns)
+    TCS: TestCase_testComputeEqualNumericInt32, time elapsed: 17300 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericInt32 (5700 ns)
+    TCS: TestCase_testComputeEqualNumericFloat32, time elapsed: 216700 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat32 (199300 ns)
+    TCS: TestCase_testComputeEqualNumericFloat32Epsilon, time elapsed: 22600 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat32Epsilon (6100 ns)
+    TCS: TestCase_testComputeEqualNumericFloat64, time elapsed: 29400 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat64 (10500 ns)
+    TCS: TestCase_testComputeEqualInt64Equal, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualInt64Equal (4500 ns)
+    TCS: TestCase_testComputeEqualInt64NotEqual, time elapsed: 19300 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualInt64NotEqual (4200 ns)
+    TCS: TestCase_testComputeEqualFloat32Nan, time elapsed: 14900 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat32Nan (4400 ns)
+    TCS: TestCase_testComputeEqualFloat64Nan, time elapsed: 19200 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat64Nan (8000 ns)
+    TCS: TestCase_testComputeEqualFloat32SignedZero, time elapsed: 14900 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat32SignedZero (4200 ns)
+    TCS: TestCase_testComputeEqualFloat64SignedZero, time elapsed: 19900 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualFloat64SignedZero (8600 ns)
+    TCS: TestCase_testComputeEqualNumericFloat32NotEqual, time elapsed: 16400 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat32NotEqual (5300 ns)
+    TCS: TestCase_testComputeEqualNumericFloat32BeyondEpsilon, time elapsed: 20700 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat32BeyondEpsilon (9500 ns)
+    TCS: TestCase_testComputeEqualNumericFloat64NotEqual, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat64NotEqual (4900 ns)
+    TCS: TestCase_testComputeEqualNumericFloat64Epsilon, time elapsed: 19100 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat64Epsilon (4500 ns)
+    TCS: TestCase_testComputeEqualNumericFloat64BeyondEpsilon, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericFloat64BeyondEpsilon (5000 ns)
+    TCS: TestCase_testComputeEqualNumericInt64, time elapsed: 16800 ns, RESULT:
+    [ PASSED ] CASE: testComputeEqualNumericInt64 (5300 ns)
+    TCS: TestCase_testPackedHighpImplementsQualifier, time elapsed: 24600 ns, RESULT:
+    [ PASSED ] CASE: testPackedHighpImplementsQualifier (8500 ns)
+    TCS: TestCase_testPackedMediumpImplementsQualifier, time elapsed: 15300 ns, RESULT:
+    [ PASSED ] CASE: testPackedMediumpImplementsQualifier (4100 ns)
+    TCS: TestCase_testPackedLowpImplementsQualifier, time elapsed: 19900 ns, RESULT:
+    [ PASSED ] CASE: testPackedLowpImplementsQualifier (4000 ns)
+    TCS: TestCase_testDefaultpIsPackedHighp, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testDefaultpIsPackedHighp (4100 ns)
+    TCS: TestCase_testScalarAddVec1, time elapsed: 196400 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec1 (179300 ns)
+    TCS: TestCase_testScalarAddVec2, time elapsed: 23500 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec2 (7400 ns)
+    TCS: TestCase_testScalarAddVec3, time elapsed: 25500 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec3 (6000 ns)
+    TCS: TestCase_testScalarAddVec4, time elapsed: 16300 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec4 (5200 ns)
+    TCS: TestCase_testScalarSubVec1, time elapsed: 203200 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec1 (185300 ns)
+    TCS: TestCase_testScalarMulVec1, time elapsed: 187900 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec1 (170700 ns)
+    TCS: TestCase_testScalarDivVec1, time elapsed: 195700 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec1 (178400 ns)
+    TCS: TestCase_testScalarModVec1, time elapsed: 177700 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1 (160200 ns)
+    TCS: TestCase_testScalarMulVec2, time elapsed: 29200 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec2 (13700 ns)
+    TCS: TestCase_testScalarSubVec2, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec2 (4300 ns)
+    TCS: TestCase_testScalarSubVec3, time elapsed: 23600 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec3 (5700 ns)
+    TCS: TestCase_testScalarSubVec4, time elapsed: 16800 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec4 (5900 ns)
+    TCS: TestCase_testScalarMulVec3, time elapsed: 16300 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec3 (4700 ns)
+    TCS: TestCase_testScalarMulVec4, time elapsed: 17200 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec4 (6300 ns)
+    TCS: TestCase_testScalarDivVec2, time elapsed: 15600 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec2 (4600 ns)
+    TCS: TestCase_testScalarDivVec3, time elapsed: 25500 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec3 (8600 ns)
+    TCS: TestCase_testScalarDivVec4, time elapsed: 17200 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec4 (5800 ns)
+    TCS: TestCase_testScalarModVec2, time elapsed: 19300 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2 (4600 ns)
+    TCS: TestCase_testScalarModVec3, time elapsed: 17300 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3 (6300 ns)
+    TCS: TestCase_testScalarModVec4, time elapsed: 21700 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4 (6200 ns)
+    TCS: TestCase_testScalarModVec1Float32, time elapsed: 24100 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1Float32 (12400 ns)
+    TCS: TestCase_testScalarModVec2Float32, time elapsed: 22900 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32 (7100 ns)
+    TCS: TestCase_testScalarModVec3Float32, time elapsed: 16900 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3Float32 (4700 ns)
+    TCS: TestCase_testScalarModVec4Float32, time elapsed: 183100 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4Float32 (166000 ns)
+    TCS: TestCase_testScalarModVec1Float64, time elapsed: 24800 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1Float64 (8700 ns)
+    TCS: TestCase_testScalarModVec2Float64, time elapsed: 23200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float64 (11700 ns)
+    TCS: TestCase_testScalarModVec3Float64, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3Float64 (5000 ns)
+    TCS: TestCase_testScalarModVec4Float64, time elapsed: 21100 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4Float64 (10400 ns)
+    TCS: TestCase_testScalarModVec1Float16, time elapsed: 28800 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1Float16 (13600 ns)
+    TCS: TestCase_testScalarModVec2Float16, time elapsed: 23600 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float16 (10500 ns)
+    TCS: TestCase_testScalarModVec3Float16, time elapsed: 16200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3Float16 (5300 ns)
+    TCS: TestCase_testScalarModVec4Float16, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4Float16 (5100 ns)
+    TCS: TestCase_testScalarSubVec2PackedMediump, time elapsed: 18700 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec2PackedMediump (7300 ns)
+    TCS: TestCase_testScalarSubVec2PackedLowp, time elapsed: 155200 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec2PackedLowp (141500 ns)
+    TCS: TestCase_testScalarMulVec2PackedMediump, time elapsed: 42200 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec2PackedMediump (7500 ns)
+    TCS: TestCase_testScalarMulVec2PackedLowp, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec2PackedLowp (6200 ns)
+    TCS: TestCase_testScalarDivVec2PackedMediump, time elapsed: 19200 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec2PackedMediump (4600 ns)
+    TCS: TestCase_testScalarDivVec2PackedLowp, time elapsed: 17400 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec2PackedLowp (6100 ns)
+    TCS: TestCase_testScalarModVec2PackedMediump, time elapsed: 22300 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2PackedMediump (5700 ns)
+    TCS: TestCase_testScalarModVec2PackedLowp, time elapsed: 15100 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2PackedLowp (4400 ns)
+    TCS: TestCase_testScalarModVec2Float32PackedMediump, time elapsed: 20600 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32PackedMediump (5500 ns)
+    TCS: TestCase_testScalarModVec2Float32PackedLowp, time elapsed: 16700 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32PackedLowp (4600 ns)
+    TCS: TestCase_testScalarModVec2Float32NegativeDividend, time elapsed: 19400 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32NegativeDividend (8400 ns)
+    TCS: TestCase_testScalarModVec2Float32NegativeDivisor, time elapsed: 15900 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32NegativeDivisor (4600 ns)
+    TCS: TestCase_testScalarModVec2Float32ZeroDivisorDoesNotAffectOtherComponents, time elapsed: 4073100 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Float32ZeroDivisorDoesNotAffectOtherComponents (4050200 ns)
+    TCS: TestCase_testScalarAddVec1Float32, time elapsed: 45400 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec1Float32 (12200 ns)
+    TCS: TestCase_testScalarAddVec2Float32, time elapsed: 40100 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec2Float32 (19800 ns)
+    TCS: TestCase_testScalarAddVec3Float32, time elapsed: 27600 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec3Float32 (7800 ns)
+    TCS: TestCase_testScalarAddVec4Float32, time elapsed: 32200 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec4Float32 (7800 ns)
+    TCS: TestCase_testScalarSubVec1Float32, time elapsed: 28600 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec1Float32 (9800 ns)
+    TCS: TestCase_testScalarSubVec2Float32, time elapsed: 26900 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec2Float32 (8600 ns)
+    TCS: TestCase_testScalarSubVec3Float32, time elapsed: 26000 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec3Float32 (7400 ns)
+    TCS: TestCase_testScalarSubVec4Float32, time elapsed: 26500 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec4Float32 (7500 ns)
+    TCS: TestCase_testScalarMulVec1Float32, time elapsed: 31800 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec1Float32 (7000 ns)
+    TCS: TestCase_testScalarMulVec2Float32, time elapsed: 25600 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec2Float32 (7100 ns)
+    TCS: TestCase_testScalarMulVec3Float32, time elapsed: 40900 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec3Float32 (7400 ns)
+    TCS: TestCase_testScalarMulVec4Float32, time elapsed: 25900 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec4Float32 (7800 ns)
+    TCS: TestCase_testScalarDivVec1Float32, time elapsed: 33000 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec1Float32 (7300 ns)
+    TCS: TestCase_testScalarDivVec2Float32, time elapsed: 25700 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec2Float32 (6900 ns)
+    TCS: TestCase_testScalarDivVec3Float32, time elapsed: 31000 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec3Float32 (7100 ns)
+    TCS: TestCase_testScalarDivVec4Float32, time elapsed: 25400 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec4Float32 (7800 ns)
+    TCS: TestCase_testScalarAddVec1Int32, time elapsed: 37200 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec1Int32 (12500 ns)
+    TCS: TestCase_testScalarAddVec2Int32, time elapsed: 26900 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec2Int32 (7600 ns)
+    TCS: TestCase_testScalarAddVec3Int32, time elapsed: 23300 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec3Int32 (10600 ns)
+    TCS: TestCase_testScalarAddVec4Int32, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddVec4Int32 (5200 ns)
+    TCS: TestCase_testScalarSubVec1Int32, time elapsed: 21200 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec1Int32 (6000 ns)
+    TCS: TestCase_testScalarSubVec2Int32, time elapsed: 15000 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec2Int32 (4200 ns)
+    TCS: TestCase_testScalarSubVec3Int32, time elapsed: 20600 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec3Int32 (9600 ns)
+    TCS: TestCase_testScalarSubVec4Int32, time elapsed: 16200 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec4Int32 (5100 ns)
+    TCS: TestCase_testScalarMulVec1Int32, time elapsed: 23900 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec1Int32 (7700 ns)
+    TCS: TestCase_testScalarMulVec2Int32, time elapsed: 16900 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec2Int32 (5000 ns)
+    TCS: TestCase_testScalarMulVec3Int32, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec3Int32 (4700 ns)
+    TCS: TestCase_testScalarMulVec4Int32, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec4Int32 (4700 ns)
+    TCS: TestCase_testScalarDivVec1Int32, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec1Int32 (4700 ns)
+    TCS: TestCase_testScalarDivVec2Int32, time elapsed: 21800 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec2Int32 (6000 ns)
+    TCS: TestCase_testScalarDivVec3Int32, time elapsed: 18600 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec3Int32 (7100 ns)
+    TCS: TestCase_testScalarDivVec4Int32, time elapsed: 21200 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec4Int32 (5000 ns)
+    TCS: TestCase_testScalarModVec1Int32, time elapsed: 17700 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1Int32 (5900 ns)
+    TCS: TestCase_testScalarModVec2Int32, time elapsed: 19300 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec2Int32 (4700 ns)
+    TCS: TestCase_testScalarModVec3Int32, time elapsed: 17200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3Int32 (4800 ns)
+    TCS: TestCase_testScalarModVec4Int32, time elapsed: 20200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4Int32 (4700 ns)
+    TCS: TestCase_testScalarSubVec1PackedMediump, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec1PackedMediump (5300 ns)
+    TCS: TestCase_testScalarSubVec1PackedLowp, time elapsed: 20800 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec1PackedLowp (9100 ns)
+    TCS: TestCase_testScalarSubVec3PackedMediump, time elapsed: 17000 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec3PackedMediump (5500 ns)
+    TCS: TestCase_testScalarSubVec3PackedLowp, time elapsed: 22500 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec3PackedLowp (7000 ns)
+    TCS: TestCase_testScalarSubVec4PackedMediump, time elapsed: 16400 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec4PackedMediump (5600 ns)
+    TCS: TestCase_testScalarSubVec4PackedLowp, time elapsed: 20000 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubVec4PackedLowp (9100 ns)
+    TCS: TestCase_testScalarMulVec1PackedMediump, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec1PackedMediump (4800 ns)
+    TCS: TestCase_testScalarMulVec1PackedLowp, time elapsed: 19100 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec1PackedLowp (4600 ns)
+    TCS: TestCase_testScalarMulVec3PackedMediump, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec3PackedMediump (4800 ns)
+    TCS: TestCase_testScalarMulVec3PackedLowp, time elapsed: 15500 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec3PackedLowp (4500 ns)
+    TCS: TestCase_testScalarMulVec4PackedMediump, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec4PackedMediump (4500 ns)
+    TCS: TestCase_testScalarMulVec4PackedLowp, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulVec4PackedLowp (4600 ns)
+    TCS: TestCase_testScalarDivVec1PackedMediump, time elapsed: 20000 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec1PackedMediump (4700 ns)
+    TCS: TestCase_testScalarDivVec1PackedLowp, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec1PackedLowp (4400 ns)
+    TCS: TestCase_testScalarDivVec3PackedMediump, time elapsed: 26500 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec3PackedMediump (6700 ns)
+    TCS: TestCase_testScalarDivVec3PackedLowp, time elapsed: 22000 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec3PackedLowp (6400 ns)
+    TCS: TestCase_testScalarDivVec4PackedMediump, time elapsed: 22100 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec4PackedMediump (5000 ns)
+    TCS: TestCase_testScalarDivVec4PackedLowp, time elapsed: 15500 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivVec4PackedLowp (4600 ns)
+    TCS: TestCase_testScalarModVec1PackedMediump, time elapsed: 21200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1PackedMediump (4500 ns)
+    TCS: TestCase_testScalarModVec1PackedLowp, time elapsed: 15200 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec1PackedLowp (4100 ns)
+    TCS: TestCase_testScalarModVec3PackedMediump, time elapsed: 19600 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3PackedMediump (8700 ns)
+    TCS: TestCase_testScalarModVec3PackedLowp, time elapsed: 17500 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec3PackedLowp (5000 ns)
+    TCS: TestCase_testScalarModVec4PackedMediump, time elapsed: 23000 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4PackedMediump (10000 ns)
+    TCS: TestCase_testScalarModVec4PackedLowp, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testScalarModVec4PackedLowp (4700 ns)
+    TCS: TestCase_testScalarDivZeroVec1, time elapsed: 25100 ns, RESULT:
+    [ PASSED ] CASE: testScalarDivZeroVec1 (13100 ns)
+    TCS: TestCase_testScalarAddNegVec1, time elapsed: 17100 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddNegVec1 (4700 ns)
+    TCS: TestCase_testScalarAddNegVec2, time elapsed: 20400 ns, RESULT:
+    [ PASSED ] CASE: testScalarAddNegVec2 (4400 ns)
+    TCS: TestCase_testScalarMulOverflowVec1, time elapsed: 17000 ns, RESULT:
+    [ PASSED ] CASE: testScalarMulOverflowVec1 (5200 ns)
+    TCS: TestCase_testScalarSubNegVec1, time elapsed: 17300 ns, RESULT:
+    [ PASSED ] CASE: testScalarSubNegVec1 (6200 ns)
+    TCS: TestCase_testVersionMajor, time elapsed: 21400 ns, RESULT:
+    [ PASSED ] CASE: testVersionMajor (5500 ns)
+    TCS: TestCase_testVersionMinor, time elapsed: 15000 ns, RESULT:
+    [ PASSED ] CASE: testVersionMinor (4000 ns)
+    TCS: TestCase_testVersionPatch, time elapsed: 19700 ns, RESULT:
+    [ PASSED ] CASE: testVersionPatch (4100 ns)
+    TCS: TestCase_testVersionEncoded, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testVersionEncoded (7100 ns)
+    TCS: TestCase_testConfigSimd, time elapsed: 21100 ns, RESULT:
+    [ PASSED ] CASE: testConfigSimd (6300 ns)
+    TCS: TestCase_testConfigAlignedGentypes, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testConfigAlignedGentypes (4400 ns)
+    TCS: TestCase_testConfigClipControl, time elapsed: 18900 ns, RESULT:
+    [ PASSED ] CASE: testConfigClipControl (4600 ns)
+    TCS: TestCase_testConstNegationSimd, time elapsed: 14900 ns, RESULT:
+    [ PASSED ] CASE: testConstNegationSimd (4000 ns)
+    TCS: TestCase_testConstNegationAligned, time elapsed: 19800 ns, RESULT:
+    [ PASSED ] CASE: testConstNegationAligned (8600 ns)
+    TCS: TestCase_testConstNegationClip, time elapsed: 16700 ns, RESULT:
+    [ PASSED ] CASE: testConstNegationClip (5200 ns)
+    TCS: TestCase_testConstInt64Usage, time elapsed: 20900 ns, RESULT:
+    [ PASSED ] CASE: testConstInt64Usage (4500 ns)
+    TCS: TestCase_testConstBoolUsage, time elapsed: 18800 ns, RESULT:
+    [ PASSED ] CASE: testConstBoolUsage (6000 ns)
+    TCS: TestCase_testVersionEncodingConsistency, time elapsed: 19100 ns, RESULT:
+    [ PASSED ] CASE: testVersionEncodingConsistency (8000 ns)
+    TCS: TestCase_testAssertPasses, time elapsed: 234900 ns, RESULT:
+    [ PASSED ] CASE: testAssertPasses (219500 ns)
+    TCS: TestCase_testAssertFails, time elapsed: 654100 ns, RESULT:
+    [ PASSED ] CASE: testAssertFails (616000 ns)
+    TCS: TestCase_testAssertWithCustomMessage, time elapsed: 786600 ns, RESULT:
+    [ PASSED ] CASE: testAssertWithCustomMessage (759700 ns)
+    TCS: TestCase_testNumericLimitsFloat32Epsilon, time elapsed: 39100 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsFloat32Epsilon (8700 ns)
+    TCS: TestCase_testNumericLimitsFloat64Epsilon, time elapsed: 30200 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsFloat64Epsilon (8200 ns)
+    TCS: TestCase_testIsIec559OfFloat32, time elapsed: 26400 ns, RESULT:
+    [ PASSED ] CASE: testIsIec559OfFloat32 (7800 ns)
+    TCS: TestCase_testIsIec559OfFloat64, time elapsed: 33400 ns, RESULT:
+    [ PASSED ] CASE: testIsIec559OfFloat64 (6600 ns)
+    TCS: TestCase_testIsIec559OfInt64, time elapsed: 28900 ns, RESULT:
+    [ PASSED ] CASE: testIsIec559OfInt64 (9700 ns)
+    TCS: TestCase_testEpsilonOfFloat32, time elapsed: 33500 ns, RESULT:
+    [ PASSED ] CASE: testEpsilonOfFloat32 (7300 ns)
+    TCS: TestCase_testEpsilonOfFloat64, time elapsed: 26300 ns, RESULT:
+    [ PASSED ] CASE: testEpsilonOfFloat64 (7900 ns)
+    TCS: TestCase_testNumericLimitsInt64Epsilon, time elapsed: 32400 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsInt64Epsilon (7800 ns)
+    TCS: TestCase_testNumericLimitsInt32Epsilon, time elapsed: 27900 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsInt32Epsilon (9200 ns)
+    TCS: TestCase_testNumericLimitsInt16Epsilon, time elapsed: 43900 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsInt16Epsilon (11100 ns)
+    TCS: TestCase_testNumericLimitsInt8Epsilon, time elapsed: 29100 ns, RESULT:
+    [ PASSED ] CASE: testNumericLimitsInt8Epsilon (10300 ns)
+    TCS: TestCase_testCastVec1ToVec1IntToFloat, time elapsed: 225100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec1ToVec1IntToFloat (203000 ns)
+    TCS: TestCase_testCastVec2ToVec1TakesOnlyX, time elapsed: 24000 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2ToVec1TakesOnlyX (4900 ns)
+    TCS: TestCase_testCastVec3ToVec1TakesOnlyX, time elapsed: 23700 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3ToVec1TakesOnlyX (11500 ns)
+    TCS: TestCase_testCastVec4ToVec1TakesOnlyX, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4ToVec1TakesOnlyX (4600 ns)
+    TCS: TestCase_testCastSameTypeIdentity, time elapsed: 21000 ns, RESULT:
+    [ PASSED ] CASE: testCastSameTypeIdentity (9300 ns)
+    TCS: TestCase_testCastInt32ToInt64, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testCastInt32ToInt64 (5000 ns)
+    TCS: TestCase_testCastFloatToIntTruncation, time elapsed: 15700 ns, RESULT:
+    [ PASSED ] CASE: testCastFloatToIntTruncation (4900 ns)
+    TCS: TestCase_testCastCrossQualifierPackedHighpToDefaultp, time elapsed: 15600 ns, RESULT:
+    [ PASSED ] CASE: testCastCrossQualifierPackedHighpToDefaultp (4300 ns)
+    TCS: TestCase_testCastCrossQualifierDefaultpToPackedHighp, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testCastCrossQualifierDefaultpToPackedHighp (4900 ns)
+    TCS: TestCase_testCastVec2CrossQualifierCrossType, time elapsed: 21100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2CrossQualifierCrossType (5500 ns)
+    TCS: TestCase_testCastVec3CrossQualifier, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3CrossQualifier (4700 ns)
+    TCS: TestCase_testCastVec4CrossQualifier, time elapsed: 21700 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4CrossQualifier (4800 ns)
+    TCS: TestCase_testCastVec1DoesNotModifySource, time elapsed: 16500 ns, RESULT:
+    [ PASSED ] CASE: testCastVec1DoesNotModifySource (5300 ns)
+    TCS: TestCase_testCastVec2Vec1ToVec2IntToFloat, time elapsed: 20100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Vec1ToVec2IntToFloat (5400 ns)
+    TCS: TestCase_testCastVec2Vec2ToVec2Identity, time elapsed: 17500 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Vec2ToVec2Identity (6300 ns)
+    TCS: TestCase_testCastVec2Vec3ToVec2TakesOnlyXY, time elapsed: 19500 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Vec3ToVec2TakesOnlyXY (5000 ns)
+    TCS: TestCase_testCastVec2Vec4ToVec2TakesOnlyXY, time elapsed: 17000 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Vec4ToVec2TakesOnlyXY (5900 ns)
+    TCS: TestCase_testCastVec2SameTypeIdentity, time elapsed: 21000 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2SameTypeIdentity (4400 ns)
+    TCS: TestCase_testCastVec2Int32ToInt64, time elapsed: 16300 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Int32ToInt64 (5000 ns)
+    TCS: TestCase_testCastVec2FloatToIntTruncation, time elapsed: 21100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2FloatToIntTruncation (8800 ns)
+    TCS: TestCase_testCastVec2CrossQualifierPackedHighpToDefaultp, time elapsed: 16400 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2CrossQualifierPackedHighpToDefaultp (5000 ns)
+    TCS: TestCase_testCastVec2DoesNotModifySource, time elapsed: 19700 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2DoesNotModifySource (8100 ns)
+    TCS: TestCase_testCastVec2Vec1ToVec2SameValueBothComponents, time elapsed: 16000 ns, RESULT:
+    [ PASSED ] CASE: testCastVec2Vec1ToVec2SameValueBothComponents (4700 ns)
+    TCS: TestCase_testCastVec3Vec1ToVec3IntToFloat, time elapsed: 21900 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Vec1ToVec3IntToFloat (9800 ns)
+    TCS: TestCase_testCastVec3Vec2ToVec3ExtendY, time elapsed: 18600 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Vec2ToVec3ExtendY (6100 ns)
+    TCS: TestCase_testCastVec3Vec3ToVec3Identity, time elapsed: 20100 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Vec3ToVec3Identity (4700 ns)
+    TCS: TestCase_testCastVec3Vec4ToVec3TakesOnlyXYZ, time elapsed: 22900 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Vec4ToVec3TakesOnlyXYZ (9000 ns)
+    TCS: TestCase_testCastVec3SameTypeIdentity, time elapsed: 21200 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3SameTypeIdentity (5900 ns)
+    TCS: TestCase_testCastVec3Int32ToInt64, time elapsed: 16300 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Int32ToInt64 (4700 ns)
+    TCS: TestCase_testCastVec3FloatToIntTruncation, time elapsed: 16500 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3FloatToIntTruncation (4500 ns)
+    TCS: TestCase_testCastVec3CrossQualifierPackedHighpToDefaultp, time elapsed: 19800 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3CrossQualifierPackedHighpToDefaultp (4200 ns)
+    TCS: TestCase_testCastVec3DoesNotModifySource, time elapsed: 15500 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3DoesNotModifySource (4400 ns)
+    TCS: TestCase_testCastVec3Vec1ToVec3SameValueAllComponents, time elapsed: 20300 ns, RESULT:
+    [ PASSED ] CASE: testCastVec3Vec1ToVec3SameValueAllComponents (5400 ns)
+    TCS: TestCase_testCastVec4Vec1ToVec4IntToFloat, time elapsed: 20600 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Vec1ToVec4IntToFloat (7400 ns)
+    TCS: TestCase_testCastVec4Vec2ToVec4ExtendY, time elapsed: 22400 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Vec2ToVec4ExtendY (5700 ns)
+    TCS: TestCase_testCastVec4Vec3ToVec4ExtendZ, time elapsed: 18900 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Vec3ToVec4ExtendZ (7000 ns)
+    TCS: TestCase_testCastVec4Vec4ToVec4Identity, time elapsed: 188300 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Vec4ToVec4Identity (170300 ns)
+    TCS: TestCase_testCastVec4SameTypeIdentity, time elapsed: 22300 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4SameTypeIdentity (5200 ns)
+    TCS: TestCase_testCastVec4Int32ToInt64, time elapsed: 23400 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Int32ToInt64 (5200 ns)
+    TCS: TestCase_testCastVec4FloatToIntTruncation, time elapsed: 15600 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4FloatToIntTruncation (4600 ns)
+    TCS: TestCase_testCastVec4CrossQualifierPackedHighpToDefaultp, time elapsed: 20000 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4CrossQualifierPackedHighpToDefaultp (8600 ns)
+    TCS: TestCase_testCastVec4DoesNotModifySource, time elapsed: 17600 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4DoesNotModifySource (5000 ns)
+    TCS: TestCase_testCastVec4Vec1ToVec4SameValueAllComponents, time elapsed: 21700 ns, RESULT:
+    [ PASSED ] CASE: testCastVec4Vec1ToVec4SameValueAllComponents (4700 ns)
+    TCS: TestCase_testFromBoolVec1, time elapsed: 17500 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec1 (6400 ns)
+    TCS: TestCase_testFromBoolVec1False, time elapsed: 19000 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec1False (7700 ns)
+    TCS: TestCase_testFromBoolVec2, time elapsed: 16700 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec2 (5500 ns)
+    TCS: TestCase_testFromBoolVec3, time elapsed: 20800 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec3 (5800 ns)
+    TCS: TestCase_testFromBoolVec4, time elapsed: 24200 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec4 (9600 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec1, time elapsed: 25800 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec1 (7100 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec2, time elapsed: 28100 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec2 (9000 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec3, time elapsed: 26300 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec3 (7800 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec4, time elapsed: 34800 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec4 (10100 ns)
+    TCS: TestCase_testFromBoolVec3AllFalse, time elapsed: 25300 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec3AllFalse (7000 ns)
+    TCS: TestCase_testFromBoolVec4AllFalse, time elapsed: 31400 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVec4AllFalse (7400 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec3AllFalse, time elapsed: 25600 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec3AllFalse (7500 ns)
+    TCS: TestCase_testFromBoolVecQ2Vec4AllFalse, time elapsed: 33000 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2Vec4AllFalse (7200 ns)
+    TCS: TestCase_testFromBoolVecFloat32, time elapsed: 37400 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecFloat32 (11200 ns)
+    TCS: TestCase_testFromBoolVecFloat64, time elapsed: 57300 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecFloat64 (14000 ns)
+    TCS: TestCase_testFromBoolVecInt32, time elapsed: 61900 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecInt32 (17600 ns)
+    TCS: TestCase_testFromBoolVecQ2PackedMediump, time elapsed: 57300 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2PackedMediump (22500 ns)
+    TCS: TestCase_testFromBoolVecQ2PackedLowp, time elapsed: 33200 ns, RESULT:
+    [ PASSED ] CASE: testFromBoolVecQ2PackedLowp (12600 ns)
+    TCS: TestCase_testS1QuatCastScalingXBranch, time elapsed: 798700 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastScalingXBranch (771600 ns)
+    TCS: TestCase_testS1QuatCastScalingYBranch, time elapsed: 219600 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastScalingYBranch (185300 ns)
+    TCS: TestCase_testS1QuatCastScalingZBranch, time elapsed: 60400 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastScalingZBranch (33300 ns)
+    TCS: TestCase_testS1QuatCastScalingWBranch, time elapsed: 38100 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastScalingWBranch (18100 ns)
+    TCS: TestCase_testS1QuatCastUnitRoundTrip, time elapsed: 40800 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastUnitRoundTrip (15300 ns)
+    TCS: TestCase_testS1QuatCastIdentityRoundTrip, time elapsed: 33000 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastIdentityRoundTrip (12700 ns)
+    TCS: TestCase_testS1QuatCastMat4Delegation, time elapsed: 156900 ns, RESULT:
+    [ PASSED ] CASE: testS1QuatCastMat4Delegation (125600 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedExactMatch, time elapsed: 35100 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedExactMatch (8500 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedWithinPosTolerance, time elapsed: 38200 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedWithinPosTolerance (8100 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedWithinNegTolerance, time elapsed: 27700 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedWithinNegTolerance (8500 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedBeyondTolerance, time elapsed: 36400 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedBeyondTolerance (7600 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedZeroMatrix, time elapsed: 26700 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedZeroMatrix (7500 ns)
+    TCS: TestCase_testMat3EqualEpsilonRelaxedSingleDiffBeyond, time elapsed: 31900 ns, RESULT:
+    [ PASSED ] CASE: testMat3EqualEpsilonRelaxedSingleDiffBeyond (7400 ns)
+    TCS: TestCase_testVec2ScalarInit, time elapsed: 30800 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarInit (12000 ns)
+    TCS: TestCase_testVec2ConstInit, time elapsed: 36000 ns, RESULT:
+    [ PASSED ] CASE: testVec2ConstInit (9300 ns)
+    TCS: TestCase_testVec2Length, time elapsed: 27000 ns, RESULT:
+    [ PASSED ] CASE: testVec2Length (6900 ns)
+    TCS: TestCase_testVec2Add, time elapsed: 248900 ns, RESULT:
+    [ PASSED ] CASE: testVec2Add (221500 ns)
+    TCS: TestCase_testVec2Sub, time elapsed: 187200 ns, RESULT:
+    [ PASSED ] CASE: testVec2Sub (157000 ns)
+    TCS: TestCase_testVec2Mul, time elapsed: 187300 ns, RESULT:
+    [ PASSED ] CASE: testVec2Mul (169600 ns)
+    TCS: TestCase_testVec2ScalarAdd, time elapsed: 188600 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarAdd (169500 ns)
+    TCS: TestCase_testVec2Negate, time elapsed: 195400 ns, RESULT:
+    [ PASSED ] CASE: testVec2Negate (177800 ns)
+    TCS: TestCase_testVec2IndexAccess, time elapsed: 23200 ns, RESULT:
+    [ PASSED ] CASE: testVec2IndexAccess (6600 ns)
+    TCS: TestCase_testVec2IndexMutate, time elapsed: 22700 ns, RESULT:
+    [ PASSED ] CASE: testVec2IndexMutate (11400 ns)
+    TCS: TestCase_testVec2ComponentAt, time elapsed: 16800 ns, RESULT:
+    [ PASSED ] CASE: testVec2ComponentAt (4600 ns)
+    TCS: TestCase_testVec2Equal, time elapsed: 190800 ns, RESULT:
+    [ PASSED ] CASE: testVec2Equal (176800 ns)
+    TCS: TestCase_testVec2NotEqual, time elapsed: 23100 ns, RESULT:
+    [ PASSED ] CASE: testVec2NotEqual (6600 ns)
+    TCS: TestCase_testVec2EqualExact, time elapsed: 184700 ns, RESULT:
+    [ PASSED ] CASE: testVec2EqualExact (171100 ns)
+    TCS: TestCase_testVec2BitwiseAnd, time elapsed: 185000 ns, RESULT:
+    [ PASSED ] CASE: testVec2BitwiseAnd (159700 ns)
+    TCS: TestCase_testVec2BitwiseNot, time elapsed: 22800 ns, RESULT:
+    [ PASSED ] CASE: testVec2BitwiseNot (7000 ns)
+    TCS: TestCase_testVec2FromVec1, time elapsed: 23000 ns, RESULT:
+    [ PASSED ] CASE: testVec2FromVec1 (4900 ns)
+    TCS: TestCase_testVec2ShiftLeft, time elapsed: 18300 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftLeft (7100 ns)
+    TCS: TestCase_testVec2BoolLogicalAnd, time elapsed: 24100 ns, RESULT:
+    [ PASSED ] CASE: testVec2BoolLogicalAnd (7300 ns)
+    TCS: TestCase_testVec2Vec1ArithBroadcast, time elapsed: 21800 ns, RESULT:
+    [ PASSED ] CASE: testVec2Vec1ArithBroadcast (7700 ns)
+    TCS: TestCase_testVec2Vec1BitBroadcast, time elapsed: 25400 ns, RESULT:
+    [ PASSED ] CASE: testVec2Vec1BitBroadcast (7800 ns)
+    TCS: TestCase_testVec2ShiftLeftVec1, time elapsed: 16400 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftLeftVec1 (5600 ns)
+    TCS: TestCase_testVec2Div, time elapsed: 23100 ns, RESULT:
+    [ PASSED ] CASE: testVec2Div (10800 ns)
+    TCS: TestCase_testVec2Mod, time elapsed: 17600 ns, RESULT:
+    [ PASSED ] CASE: testVec2Mod (6700 ns)
+    TCS: TestCase_testVec2ScalarSub, time elapsed: 22200 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarSub (10900 ns)
+    TCS: TestCase_testVec2ScalarMul, time elapsed: 166500 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarMul (153100 ns)
+    TCS: TestCase_testVec2ScalarDiv, time elapsed: 28100 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarDiv (12500 ns)
+    TCS: TestCase_testVec2ScalarMod, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarMod (4500 ns)
+    TCS: TestCase_testVec2BoolLogicalOr, time elapsed: 14900 ns, RESULT:
+    [ PASSED ] CASE: testVec2BoolLogicalOr (4400 ns)
+    TCS: TestCase_testVec2EqualEpsilon, time elapsed: 20800 ns, RESULT:
+    [ PASSED ] CASE: testVec2EqualEpsilon (9200 ns)
+    TCS: TestCase_testVec2DivNamed, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testVec2DivNamed (5600 ns)
+    TCS: TestCase_testVec2ModNamed, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testVec2ModNamed (4400 ns)
+    TCS: TestCase_testVec2BitwiseOr, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testVec2BitwiseOr (6000 ns)
+    TCS: TestCase_testVec2BitwiseXor, time elapsed: 20500 ns, RESULT:
+    [ PASSED ] CASE: testVec2BitwiseXor (5600 ns)
+    TCS: TestCase_testVec2ScalarBitwiseAnd, time elapsed: 15000 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarBitwiseAnd (4500 ns)
+    TCS: TestCase_testVec2ShiftRight, time elapsed: 20900 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftRight (4700 ns)
+    TCS: TestCase_testVec2ShiftRightVec1, time elapsed: 17100 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftRightVec1 (6000 ns)
+    TCS: TestCase_testVec2AddNamed, time elapsed: 18900 ns, RESULT:
+    [ PASSED ] CASE: testVec2AddNamed (4900 ns)
+    TCS: TestCase_testVec2SubNamed, time elapsed: 15300 ns, RESULT:
+    [ PASSED ] CASE: testVec2SubNamed (4300 ns)
+    TCS: TestCase_testVec2MulNamed, time elapsed: 19000 ns, RESULT:
+    [ PASSED ] CASE: testVec2MulNamed (4600 ns)
+    TCS: TestCase_testVec2ShiftLeftVec, time elapsed: 15500 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftLeftVec (4500 ns)
+    TCS: TestCase_testVec2ShiftRightVec, time elapsed: 20500 ns, RESULT:
+    [ PASSED ] CASE: testVec2ShiftRightVec (8800 ns)
+    TCS: TestCase_testVec2ScalarBitwiseOr, time elapsed: 17300 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarBitwiseOr (6100 ns)
+    TCS: TestCase_testVec2ScalarBitwiseXor, time elapsed: 23000 ns, RESULT:
+    [ PASSED ] CASE: testVec2ScalarBitwiseXor (9900 ns)
+    TCS: TestCase_testVec2Increment, time elapsed: 18700 ns, RESULT:
+    [ PASSED ] CASE: testVec2Increment (7500 ns)
+    TCS: TestCase_testVec2Decrement, time elapsed: 21000 ns, RESULT:
+    [ PASSED ] CASE: testVec2Decrement (9800 ns)
+    TCS: TestCase_testVec2IndexOutOfBoundsAccess, time elapsed: 483400 ns, RESULT:
+    [ PASSED ] CASE: testVec2IndexOutOfBoundsAccess (468900 ns)
+    TCS: TestCase_testVec2NegativeIndexAccess, time elapsed: 42500 ns, RESULT:
+    [ PASSED ] CASE: testVec2NegativeIndexAccess (15500 ns)
+    TCS: TestCase_testVec3ScalarInit, time elapsed: 19200 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarInit (7100 ns)
+    TCS: TestCase_testVec3ConstInit, time elapsed: 15900 ns, RESULT:
+    [ PASSED ] CASE: testVec3ConstInit (4400 ns)
+    TCS: TestCase_testVec3Length, time elapsed: 15900 ns, RESULT:
+    [ PASSED ] CASE: testVec3Length (4000 ns)
+    TCS: TestCase_testVec3Add, time elapsed: 207800 ns, RESULT:
+    [ PASSED ] CASE: testVec3Add (194300 ns)
+    TCS: TestCase_testVec3ScalarMul, time elapsed: 31400 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarMul (8500 ns)
+    TCS: TestCase_testVec3Negate, time elapsed: 17500 ns, RESULT:
+    [ PASSED ] CASE: testVec3Negate (6100 ns)
+    TCS: TestCase_testVec3IndexAccess, time elapsed: 22100 ns, RESULT:
+    [ PASSED ] CASE: testVec3IndexAccess (5300 ns)
+    TCS: TestCase_testVec3IndexMutate, time elapsed: 18100 ns, RESULT:
+    [ PASSED ] CASE: testVec3IndexMutate (5600 ns)
+    TCS: TestCase_testVec3ComponentAt, time elapsed: 19300 ns, RESULT:
+    [ PASSED ] CASE: testVec3ComponentAt (4300 ns)
+    TCS: TestCase_testVec3Equal, time elapsed: 195600 ns, RESULT:
+    [ PASSED ] CASE: testVec3Equal (182800 ns)
+    TCS: TestCase_testVec3NotEqual, time elapsed: 194500 ns, RESULT:
+    [ PASSED ] CASE: testVec3NotEqual (170700 ns)
+    TCS: TestCase_testVec3EqualExact, time elapsed: 23400 ns, RESULT:
+    [ PASSED ] CASE: testVec3EqualExact (7400 ns)
+    TCS: TestCase_testVec3BitwiseAnd, time elapsed: 187300 ns, RESULT:
+    [ PASSED ] CASE: testVec3BitwiseAnd (174000 ns)
+    TCS: TestCase_testVec3BitwiseNot, time elapsed: 21700 ns, RESULT:
+    [ PASSED ] CASE: testVec3BitwiseNot (6100 ns)
+    TCS: TestCase_testVec3Vec1ArithBroadcast, time elapsed: 77400 ns, RESULT:
+    [ PASSED ] CASE: testVec3Vec1ArithBroadcast (63400 ns)
+    TCS: TestCase_testVec3ShiftLeft, time elapsed: 25200 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftLeft (8900 ns)
+    TCS: TestCase_testVec3BoolLogicalAnd, time elapsed: 195300 ns, RESULT:
+    [ PASSED ] CASE: testVec3BoolLogicalAnd (181400 ns)
+    TCS: TestCase_testVec3Sub, time elapsed: 24400 ns, RESULT:
+    [ PASSED ] CASE: testVec3Sub (7400 ns)
+    TCS: TestCase_testVec3Div, time elapsed: 23300 ns, RESULT:
+    [ PASSED ] CASE: testVec3Div (7100 ns)
+    TCS: TestCase_testVec3Mod, time elapsed: 18500 ns, RESULT:
+    [ PASSED ] CASE: testVec3Mod (6600 ns)
+    TCS: TestCase_testVec3ScalarSub, time elapsed: 193100 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarSub (179500 ns)
+    TCS: TestCase_testVec3ScalarDiv, time elapsed: 24000 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarDiv (7300 ns)
+    TCS: TestCase_testVec3ScalarMod, time elapsed: 169900 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarMod (155500 ns)
+    TCS: TestCase_testVec3BoolLogicalOr, time elapsed: 43800 ns, RESULT:
+    [ PASSED ] CASE: testVec3BoolLogicalOr (8100 ns)
+    TCS: TestCase_testVec3EqualEpsilon, time elapsed: 33200 ns, RESULT:
+    [ PASSED ] CASE: testVec3EqualEpsilon (13800 ns)
+    TCS: TestCase_testVec3AddNamed, time elapsed: 35300 ns, RESULT:
+    [ PASSED ] CASE: testVec3AddNamed (10800 ns)
+    TCS: TestCase_testVec3MulNamed, time elapsed: 26900 ns, RESULT:
+    [ PASSED ] CASE: testVec3MulNamed (7700 ns)
+    TCS: TestCase_testVec3DivNamed, time elapsed: 30800 ns, RESULT:
+    [ PASSED ] CASE: testVec3DivNamed (7300 ns)
+    TCS: TestCase_testVec3ModNamed, time elapsed: 25100 ns, RESULT:
+    [ PASSED ] CASE: testVec3ModNamed (7300 ns)
+    TCS: TestCase_testVec3BitwiseOr, time elapsed: 36900 ns, RESULT:
+    [ PASSED ] CASE: testVec3BitwiseOr (11500 ns)
+    TCS: TestCase_testVec3BitwiseXor, time elapsed: 112400 ns, RESULT:
+    [ PASSED ] CASE: testVec3BitwiseXor (90800 ns)
+    TCS: TestCase_testVec3ScalarBitwiseAnd, time elapsed: 46600 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarBitwiseAnd (19900 ns)
+    TCS: TestCase_testVec3ShiftRight, time elapsed: 100300 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftRight (78100 ns)
+    TCS: TestCase_testVec3Vec1BitBroadcast, time elapsed: 120200 ns, RESULT:
+    [ PASSED ] CASE: testVec3Vec1BitBroadcast (91400 ns)
+    TCS: TestCase_testVec3ShiftRightVec1, time elapsed: 35900 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftRightVec1 (10800 ns)
+    TCS: TestCase_testVec3FromVec1, time elapsed: 38000 ns, RESULT:
+    [ PASSED ] CASE: testVec3FromVec1 (19000 ns)
+    TCS: TestCase_testVec3ScalarBitwiseOr, time elapsed: 29500 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarBitwiseOr (10700 ns)
+    TCS: TestCase_testVec3ScalarBitwiseXor, time elapsed: 35400 ns, RESULT:
+    [ PASSED ] CASE: testVec3ScalarBitwiseXor (10500 ns)
+    TCS: TestCase_testVec3Vec1BitOrBroadcast, time elapsed: 39700 ns, RESULT:
+    [ PASSED ] CASE: testVec3Vec1BitOrBroadcast (14400 ns)
+    TCS: TestCase_testVec3Vec1BitXorBroadcast, time elapsed: 38700 ns, RESULT:
+    [ PASSED ] CASE: testVec3Vec1BitXorBroadcast (14000 ns)
+    TCS: TestCase_testVec3ShiftLeftVec1, time elapsed: 30800 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftLeftVec1 (11100 ns)
+    TCS: TestCase_testVec3ShiftLeftVec, time elapsed: 26100 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftLeftVec (7700 ns)
+    TCS: TestCase_testVec3ShiftRightVec, time elapsed: 35500 ns, RESULT:
+    [ PASSED ] CASE: testVec3ShiftRightVec (9300 ns)
+    TCS: TestCase_testVec3Increment, time elapsed: 33300 ns, RESULT:
+    [ PASSED ] CASE: testVec3Increment (14300 ns)
+    TCS: TestCase_testVec3Decrement, time elapsed: 36100 ns, RESULT:
+    [ PASSED ] CASE: testVec3Decrement (11900 ns)
+    TCS: TestCase_testVec3IndexOutOfBoundsAccess, time elapsed: 54600 ns, RESULT:
+    [ PASSED ] CASE: testVec3IndexOutOfBoundsAccess (26400 ns)
+    TCS: TestCase_testVec3NegativeIndexAccess, time elapsed: 42100 ns, RESULT:
+    [ PASSED ] CASE: testVec3NegativeIndexAccess (16700 ns)
+    TCS: TestCase_testVec4ScalarInit, time elapsed: 28400 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarInit (9500 ns)
+    TCS: TestCase_testVec4ConstInit, time elapsed: 26000 ns, RESULT:
+    [ PASSED ] CASE: testVec4ConstInit (4400 ns)
+    TCS: TestCase_testVec4Length, time elapsed: 15300 ns, RESULT:
+    [ PASSED ] CASE: testVec4Length (4400 ns)
+    TCS: TestCase_testVec4Add, time elapsed: 208000 ns, RESULT:
+    [ PASSED ] CASE: testVec4Add (191200 ns)
+    TCS: TestCase_testVec4ScalarMul, time elapsed: 32500 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarMul (9400 ns)
+    TCS: TestCase_testVec4Negate, time elapsed: 25500 ns, RESULT:
+    [ PASSED ] CASE: testVec4Negate (13700 ns)
+    TCS: TestCase_testVec4IndexAccess, time elapsed: 16700 ns, RESULT:
+    [ PASSED ] CASE: testVec4IndexAccess (4900 ns)
+    TCS: TestCase_testVec4IndexMutate, time elapsed: 21500 ns, RESULT:
+    [ PASSED ] CASE: testVec4IndexMutate (10200 ns)
+    TCS: TestCase_testVec4ComponentAt, time elapsed: 15100 ns, RESULT:
+    [ PASSED ] CASE: testVec4ComponentAt (4400 ns)
+    TCS: TestCase_testVec4Equal, time elapsed: 190900 ns, RESULT:
+    [ PASSED ] CASE: testVec4Equal (177800 ns)
+    TCS: TestCase_testVec4NotEqual, time elapsed: 194400 ns, RESULT:
+    [ PASSED ] CASE: testVec4NotEqual (176300 ns)
+    TCS: TestCase_testVec4EqualExact, time elapsed: 21600 ns, RESULT:
+    [ PASSED ] CASE: testVec4EqualExact (7000 ns)
+    TCS: TestCase_testVec4BitwiseAnd, time elapsed: 187200 ns, RESULT:
+    [ PASSED ] CASE: testVec4BitwiseAnd (172800 ns)
+    TCS: TestCase_testVec4BitwiseNot, time elapsed: 23900 ns, RESULT:
+    [ PASSED ] CASE: testVec4BitwiseNot (6600 ns)
+    TCS: TestCase_testVec4Vec1ArithBroadcast, time elapsed: 80000 ns, RESULT:
+    [ PASSED ] CASE: testVec4Vec1ArithBroadcast (66100 ns)
+    TCS: TestCase_testVec4ShiftLeft, time elapsed: 23000 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftLeft (7800 ns)
+    TCS: TestCase_testVec4BoolLogicalAnd, time elapsed: 208900 ns, RESULT:
+    [ PASSED ] CASE: testVec4BoolLogicalAnd (185900 ns)
+    TCS: TestCase_testVec4Sub, time elapsed: 201600 ns, RESULT:
+    [ PASSED ] CASE: testVec4Sub (173600 ns)
+    TCS: TestCase_testVec4Div, time elapsed: 48800 ns, RESULT:
+    [ PASSED ] CASE: testVec4Div (12900 ns)
+    TCS: TestCase_testVec4Mod, time elapsed: 30900 ns, RESULT:
+    [ PASSED ] CASE: testVec4Mod (11800 ns)
+    TCS: TestCase_testVec4ScalarSub, time elapsed: 231400 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarSub (202300 ns)
+    TCS: TestCase_testVec4ScalarDiv, time elapsed: 37900 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarDiv (12100 ns)
+    TCS: TestCase_testVec4ScalarMod, time elapsed: 41300 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarMod (12300 ns)
+    TCS: TestCase_testVec4BoolLogicalOr, time elapsed: 26700 ns, RESULT:
+    [ PASSED ] CASE: testVec4BoolLogicalOr (7600 ns)
+    TCS: TestCase_testVec4EqualEpsilon, time elapsed: 38800 ns, RESULT:
+    [ PASSED ] CASE: testVec4EqualEpsilon (20300 ns)
+    TCS: TestCase_testVec4AddNamed, time elapsed: 31100 ns, RESULT:
+    [ PASSED ] CASE: testVec4AddNamed (12700 ns)
+    TCS: TestCase_testVec4MulNamed, time elapsed: 34300 ns, RESULT:
+    [ PASSED ] CASE: testVec4MulNamed (8500 ns)
+    TCS: TestCase_testVec4DivNamed, time elapsed: 26400 ns, RESULT:
+    [ PASSED ] CASE: testVec4DivNamed (8200 ns)
+    TCS: TestCase_testVec4ModNamed, time elapsed: 32100 ns, RESULT:
+    [ PASSED ] CASE: testVec4ModNamed (13900 ns)
+    TCS: TestCase_testVec4BitwiseOr, time elapsed: 29600 ns, RESULT:
+    [ PASSED ] CASE: testVec4BitwiseOr (11500 ns)
+    TCS: TestCase_testVec4BitwiseXor, time elapsed: 139600 ns, RESULT:
+    [ PASSED ] CASE: testVec4BitwiseXor (108200 ns)
+    TCS: TestCase_testVec4ScalarBitwiseAnd, time elapsed: 200200 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarBitwiseAnd (174900 ns)
+    TCS: TestCase_testVec4ShiftRight, time elapsed: 80200 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftRight (63200 ns)
+    TCS: TestCase_testVec4Vec1BitBroadcast, time elapsed: 24700 ns, RESULT:
+    [ PASSED ] CASE: testVec4Vec1BitBroadcast (8200 ns)
+    TCS: TestCase_testVec4ShiftRightVec1, time elapsed: 18800 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftRightVec1 (6700 ns)
+    TCS: TestCase_testVec4FromVec1, time elapsed: 16100 ns, RESULT:
+    [ PASSED ] CASE: testVec4FromVec1 (4800 ns)
+    TCS: TestCase_testVec4ScalarBitwiseOr, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarBitwiseOr (7200 ns)
+    TCS: TestCase_testVec4ScalarBitwiseXor, time elapsed: 17800 ns, RESULT:
+    [ PASSED ] CASE: testVec4ScalarBitwiseXor (6600 ns)
+    TCS: TestCase_testVec4Vec1BitOrBroadcast, time elapsed: 18400 ns, RESULT:
+    [ PASSED ] CASE: testVec4Vec1BitOrBroadcast (7300 ns)
+    TCS: TestCase_testVec4Vec1BitXorBroadcast, time elapsed: 22400 ns, RESULT:
+    [ PASSED ] CASE: testVec4Vec1BitXorBroadcast (7300 ns)
+    TCS: TestCase_testVec4ShiftLeftVec1, time elapsed: 18000 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftLeftVec1 (7100 ns)
+    TCS: TestCase_testVec4ShiftLeftVec, time elapsed: 20500 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftLeftVec (6000 ns)
+    TCS: TestCase_testVec4ShiftRightVec, time elapsed: 17700 ns, RESULT:
+    [ PASSED ] CASE: testVec4ShiftRightVec (6500 ns)
+    TCS: TestCase_testVec4Increment, time elapsed: 24900 ns, RESULT:
+    [ PASSED ] CASE: testVec4Increment (8800 ns)
+    TCS: TestCase_testVec4Decrement, time elapsed: 20400 ns, RESULT:
+    [ PASSED ] CASE: testVec4Decrement (8800 ns)
+    TCS: TestCase_testVec4IndexOutOfBoundsAccess, time elapsed: 32300 ns, RESULT:
+    [ PASSED ] CASE: testVec4IndexOutOfBoundsAccess (17100 ns)
+    TCS: TestCase_testVec4NegativeIndexAccess, time elapsed: 21200 ns, RESULT:
+    [ PASSED ] CASE: testVec4NegativeIndexAccess (10100 ns)
+    TCS: TestCase_testFunctor1Vec1Identity, time elapsed: 20800 ns, RESULT:
+    [ PASSED ] CASE: testFunctor1Vec1Identity (8300 ns)
+    TCS: TestCase_testFunctor1Vec1Transform, time elapsed: 15600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor1Vec1Transform (4600 ns)
+    TCS: TestCase_testFunctor1Vec2Transform, time elapsed: 22100 ns, RESULT:
+    [ PASSED ] CASE: testFunctor1Vec2Transform (5500 ns)
+    TCS: TestCase_testFunctor2Vec1Add, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2Vec1Add (5300 ns)
+    TCS: TestCase_testFunctor2VecScaVec1Mul, time elapsed: 29600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecScaVec1Mul (17000 ns)
+    TCS: TestCase_testFunctor2VecIntVec1Shift, time elapsed: 17300 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecIntVec1Shift (5700 ns)
+    TCS: TestCase_testFunctor1Vec3Transform, time elapsed: 21000 ns, RESULT:
+    [ PASSED ] CASE: testFunctor1Vec3Transform (5600 ns)
+    TCS: TestCase_testFunctor1Vec4Transform, time elapsed: 18200 ns, RESULT:
+    [ PASSED ] CASE: testFunctor1Vec4Transform (6100 ns)
+    TCS: TestCase_testFunctor2Vec2Add, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2Vec2Add (4800 ns)
+    TCS: TestCase_testFunctor2Vec3Add, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2Vec3Add (5000 ns)
+    TCS: TestCase_testFunctor2Vec4Add, time elapsed: 16600 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2Vec4Add (5800 ns)
+    TCS: TestCase_testFunctor2VecScaVec2Mul, time elapsed: 28500 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecScaVec2Mul (8200 ns)
+    TCS: TestCase_testFunctor2VecScaVec3Mul, time elapsed: 21900 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecScaVec3Mul (6300 ns)
+    TCS: TestCase_testFunctor2VecScaVec4Mul, time elapsed: 20300 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecScaVec4Mul (5400 ns)
+    TCS: TestCase_testFunctor2VecIntVec2Shift, time elapsed: 17000 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecIntVec2Shift (5800 ns)
+    TCS: TestCase_testFunctor2VecIntVec3Shift, time elapsed: 20800 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecIntVec3Shift (4900 ns)
+    TCS: TestCase_testFunctor2VecIntVec4Shift, time elapsed: 15800 ns, RESULT:
+    [ PASSED ] CASE: testFunctor2VecIntVec4Shift (4700 ns)
+Summary: TOTAL: 435
+    PASSED: 435, SKIPPED: 0, ERROR: 0
+    FAILED: 0
+--------------------------------------------------------------------------------------------------

@@ -429,6 +429,28 @@ func testLibExtDquatAliasAccessible(): Unit {
 }
 
 @Test
+func testLibDquatCompatibleWithGtcType(): Unit {
+    let q: dquat = dquat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    let _g: detail.Quat<Float64, Defaultp> = q
+    @Expect(q.x, Float64(1.0))
+    @Expect(q.w, Float64(4.0))
+}
+
+@Test
+func testLibDquatWorksWithExtConjugate(): Unit {
+    let q = dquat(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0))
+    let c = conjugate(q)
+    @Expect(c.x, -Float64(1.0))
+    @Expect(c.w, Float64(4.0))
+}
+
+@Test
+func testLibDquatWorksWithGtcEulerAngles(): Unit {
+    let q = dquat(Float64(1.0), Float64(0.0), Float64(0.0), Float64(0.0))
+    @ExpectThrows[Exception](eulerAngles(q))
+}
+
+@Test
 func testLibExtQuatAliasAndGenericCompatible(): Unit {
     let alias: quat = quat(Float32(1.0), Float32(0.0), Float32(0.0), Float32(0.0))
     let generic: detail.Quat<Float32, PackedHighp> = alias

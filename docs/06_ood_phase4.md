@@ -175,6 +175,9 @@ package glm.detail              — 核心实现层（修改/新建文件以 ★
   │                               为每个 std.math 函数提供泛型包装函数（sqrtT/expT/logT/sinT/cosT 等），
   │                               内部统一使用 (x as Float64).getOrThrow() → std.math → (result as T).getOrThrow()
   │                               模式。所有 core/ext 函数库通过此包装层间接调用 std.math，不直接委托
+  ├── vector_relational.cj ★     — 补全 5 个缺失函数（equal/notEqual/any/all/not_）
+  │                               阶段三仅设计 lessThan/greaterThan/lessThanEqual/greaterThanEqual 四个比较函数，
+  │                               本阶段补全 GLM 1.0.3 vector_relational.hpp 完整函数集
   ├── scalar_constants.cj        — 沿用阶段三（epsilon/pi/cos_one_over_two）
   └── ...（其他阶段一二三文件不变）
 
@@ -373,7 +376,7 @@ glm
 - `normalize`：Vec1~Vec4 版本
 - `length/distance/reflect/refract/faceforward`：Vec2~Vec4 版本
 - **Vec1 normalize 的零值行为**：Vec1 的 normalize 使用通式 `v * inversesqrt(dot(v, v))`，标量计算不设置保护分支。当输入为零时，`dot(v, v) = T(0)`，`inversesqrt(T(0)) = +Inf`（见上），`T(0) * +Inf = NaN`。此行为依赖 IEEE 754 的 NaN 传播规则（已验证，见 H4），与 GLM 1.0.3 的 `compute_normalize` 实现一致
-- **Vec2~Vec4 normalize 的零值行为**：对于 Vec2 及以上维度，设置保护分支：当 `lengthSq == T(0)` 时直接返回零向量，跳过除法。此保护与 §5 错误表一致
+- **Vec2~Vec4 normalize 的零值行为**：对于 Vec2 及以上维度，设置保护分支：当 `lengthSq <= T(0)` 时直接返回零向量，跳过除法。此保护采用 `<=` 而非严格 `==`，理由：IEEE 754 中 `-0.0 == +0.0` 为 true，两者在零值输入下行为一致；`<=` 更清晰地传达"保护非正长度"的防御性编程语义意图。此保护与 §5 错误表一致
 - 约束策略：使用 `T <: FloatingPoint<T>`（需要 sqrt），但 `dot` 放宽为 `T <: Number<T>`
 - `length` 实现为 `sqrt(dot(v, v))`
 - `normalize`（Vec2~Vec4）实现为 `v / length(v)`，零向量保护返回零向量
@@ -400,6 +403,25 @@ glm
   - Mat4x4：余子式展开（cofactor expansion），与 GLM 1.0.3 实现一致（见 `func_matrix.inl` 第 388~446 行 `compute_inverse<4,4,T,Q,Aligned>`）
 - 约束：`T <: Number<T>`（算术运算） + `where T <: FloatingPoint<T>` 的 inverse（需要除法），或通过 `T <: Number<T>` 下的 `one/T(Float64(n))` 路径
 - 奇异矩阵行为：奇异矩阵求逆的结果由 IEEE 754 浮点运算自然决定。当行列式 det=0 时，1/det → Inf，Inf × 余子式中的零分量产生 Inf × 0 = NaN，经 IEEE 754 NaN 传播最终产生 NaN 填充矩阵。此行为与 GLM 1.0.3 的余子式展开实现一致。函数不抛出异常，调用方需自行通过行列式检查矩阵的奇异性
+
+#### detail/vector_relational.cj
+
+**角色**：提供 GLSL 8.7 节定义的逐分量比较函数（对标 GLM 1.0.3 `vector_relational.hpp` 完整函数集）。
+
+**职责**：
+- 阶段三已实现的 4 个函数：`lessThan`、`greaterThan`、`lessThanEqual`、`greaterThanEqual`（沿用阶段三）
+- 本阶段补全的 5 个函数：
+  - `equal(a, b)`：逐分量相等比较，返回 Bool 向量
+  - `notEqual(a, b)`：逐分量不等比较，返回 Bool 向量
+  - `any(v)`：向量任一分量为 true 则返回 true（仅当 v 为 Bool 向量时定义）
+  - `all(v)`：向量所有分量为 true 才返回 true（仅当 v 为 Bool 向量时定义）
+  - `not_(v)`：逐分量逻辑取反（GLM 中为 `not_`，避免与 `!` 运算符命名冲突；仓颉函数名采用 `not_`）
+- 约束策略：
+  - `equal`/`notEqual`：`T <: Equatable<T>`，支持任意可比较类型
+  - `any`/`all`/`not_`：`v: Vec<L, Bool, Q>`，仅对 Bool 向量定义
+- 实现路径：`equal`/`notEqual` 内部调用各分量 `==`/`!=` 运算符构造 Bool 向量；`any`/`all` 通过短路逻辑（`||`/`&&`）逐分量判断；`not_` 逐分量应用 `!` 运算符
+
+**为什么本阶段补全**：阶段三 OOD 设计遗漏——阶段三的 `detail/vector_relational.cj` 仅列出了 4 个比较函数（lessThan/greaterThan/lessThanEqual/greaterThanEqual），未包含 GLM 1.0.3 中同样属于 `vector_relational.hpp` 的 `equal`/`notEqual`/`any`/`all`/`not_`。阶段四继承阶段三设计时未补全此遗漏。本阶段（阶段四）发现后正式补全 5 个函数。
 
 ### 3.2 ext 扩展函数库（glm.ext）
 
@@ -1101,7 +1123,7 @@ Step 5: result = adjugate * (1/det)                 → Mat4x4<T,Q>
 |------|------|------|
 | **奇异矩阵求逆** | 由 IEEE 754 浮点运算自然决定（1/det → Inf，Inf × 0 → NaN），最终可能产生 NaN 或 Inf 填充的矩阵 | 与 GLM 1.0.3 行为一致，不抛出异常，调用方需自行通过行列式检查矩阵的奇异性 |
 | **unProject 系族隐式矩阵求逆（proj×model 奇异）** | proj×model 为奇异矩阵时，内部 `inverse(proj * model)` 产生 NaN/Inf 填充结果，经由视口逆变换传播至最终 unProject 输出 | 此隐式求逆路径行为与 `matrix.cj.inverse` 的奇异行为一致（IEEE 754 自然传播 NaN/Inf，不抛异常）。不重复设计决策，行为参照 §5 奇异矩阵求逆行。调用方应确保 proj×model 非奇异后再调用 unProject |
-| **Vec2~Vec4 零向量 normalize** | 返回零向量 | 保护分支：`if lengthSq == T(0) return zero-vec`。与 GLM 1.0.3 行为一致（GLSL 10.1.1：if length(x)==0, result is undefined；此处保守返回零向量） |
+| **Vec2~Vec4 零向量 normalize** | 返回零向量 | 保护分支：`if lengthSq <= T(0) return zero-vec`。与 GLM 1.0.3 行为一致（GLSL 10.1.1：if length(x)==0, result is undefined；此处保守返回零向量）。采用 `<=` 而非 `==` 的理由见 §3.1 geometric.cj normalize 零值行为说明 |
 | **Vec1 零向量 normalize** | 返回 NaN | Vec1 使用 `v * inversesqrt(dot(v,v))` 通式，不设保护分支。零值时 `T(0) * +Inf = NaN`（IEEE 754 NaN 传播），与 GLM 1.0.3 的 `compute_normalize` 实现一致 |
 | **acos/asin 输入超出 [-1,1]** | 返回 NaN | `std.math.acos`/`std.math.asin` 在越界时抛出 `IllegalArgumentException`（与 GLM 行为不符）。`glm.detail.acos`/`glm.detail.asin` 内部做 `x < -T(1) || x > T(1)` 前置检查，越界时直接返回 `T.getNaN()`，仅合法输入委托 `std.math`。此行为与 GLM 1.0.3（委托 std::acos 的 NaN 返回行为）一致。例外：slerp 实现中调用 acos 前对 dot 结果做 clamp（§3.2 · ext/quaternion_common.cj），这是调用方的数值稳定措施而非 acos 函数的契约 |
 | **mod 浮点参数** | 无异常抛出 | 使用 `x - y * floor(x / y)` 公式，自然传播 NaN/Inf |
@@ -1156,6 +1178,7 @@ Step 5: result = adjugate * (1/det)                 → Mat4x4<T,Q>
 | D29 | **`exponential.cj` 的 `pow` 通过 `stdmath_shim.cj` 包装层统一实现** | `std.math.pow` 仅提供 `(Float64, Float64): Float64` 签名。`stdmath_shim.cj` 提供 `powT<T>(base, exp): T where T <: FloatingPoint<T>`，内部实现为 `(std.math.pow(Float64(base), Float64(exp)) as T).getOrThrow()`。Float16/Float32/Float64 三种浮点类型经统一的双向转型路径处理，无特殊回退分支。`ldexp` 的 `x * powT(T(2), T(exp))` 同理。此模式与 `sqrtT`/`expT`/`logT` 等其他 shim 包装器一致。<br><br>**Float16 溢出行为差异说明**：`(result as T).getOrThrow()` 模式在 `T = Float16` 且中间值超过 ±65504 时抛异常（`Float64 → Float16` 转型溢出），而 GLM 1.0.3 返回 ±Inf。此差异在 Float16 低精度图形场景中触发概率极低（中间值超出 Float16 范围需要非常大的输入值），本设计接受此差异。若编码阶段需消除此差异，可为 `stdmath_shim.cj` 添加 Float16 溢出保护：`if result > Float16.MAX → T.getInf()`。<br><br>**Float32 非规格化数精度损失说明**：`ldexp` 的 `x * powT(T(2), T(exp))` 在 `T = Float32` 且 `x` 为非规格化数时，中间值 `powT(T(2), T(exp))` 与 `x` 的乘运算可能导致额外的舍入误差（相比 GLM 1.0.3 的 C++ `std::ldexp` 使用更高精度中间值）。此精度损失在非规格化数参与的计算中触发概率低（典型图形计算极少涉及非规格化数），当前设计接受此差异。 |
 | D30 | **`lib.cj` 中 translate/rotate/scale/shear/lookAt/lookAtRH/lookAtLH 跨包导入冲突通过修改现有行解决** | 现有 lib.cj 第 23 行从 gtc 导入 translate/rotate/scale/shear/lookAt/lookAtRH/lookAtLH。本阶段 §8 的 ext 导入同样导入这些符号，造成跨包重复导入冲突。<br><br>**推荐方案**：修改现有 lib.cj 第 23 行，从 gtc 的 public import 中删除 translate/rotate/scale/shear/lookAt/lookAtRH/lookAtLH，改由 §8 的 `public import glm.ext.{translate, rotate, scale, shear, lookAt, lookAtRH, lookAtLH}` 统一提供。gtc/matrix_transform.cj 内部通过 `public import` 从 ext 转发这些函数，确保通过 `glm::` 命名空间（即 `glm.gtc` 包路径）调用时仍可访问。此方案使 ext 层作为实现细节，gtc 层作为稳定 API 面，符合 GLM 1.0.3 的 gtc 委托层角色。<br><br>**验证结果**：经仓颉语言文档确认（H6），函数重载可基于参数类型自动区分。ext 和 gtc 中同名函数签名为同一实现（gtc 转发至 ext），无重载歧义。此方案已在 D23 的同符号导入分析框架中得到支撑。 |
 | D31 | **噪声函数采用 `perlin1D~/perlin4D`、`simplex1D~/simplex4D` 拆分命名，而非 GLM 1.0.3 的单一函数名 `perlin`/`simplex` 加模板维度参数** | GLM 1.0.3 的 C++ 实现通过模板参数 `L` 区分噪声维度（`perlin(vec<L,T,Q>)`），同一函数名经模板实例化后产生不同维度版本。仓颉不支持整数维度泛型参数，无法用单一泛型函数覆盖所有维度。因此拆分为维度专属函数名（`perlin1D`/`perlin2D`/`perlin3D`/`perlin4D` 和 `simplex1D`/`simplex2D`/`simplex3D`/`simplex4D`），每个函数接受对应维度的向量参数。周期性 Perlin 噪声同理拆分为 `perlin1D(..., period)`/`perlin2D(..., period)`/`perlin3D(..., period)`/`perlin4D(..., period)`，每个维度各一周期重载。此命名模式与 gtc/packing.cj 中 pack 函数的分维度命名一致（如 `packUnorm2x8`/`packUnorm4x8`），保持全库命名风格统一。 |
+| D32 | **`ext/quaternion_transform.cj` 的 `rotate` 零轴返回单位四元数** | 当 axis 向量长度为零时，`rotate(q, angle, axis)` 返回单位四元数 `Quat(T(1), T(0), T(0), T(0))`，而非保留原 `q` 或抛出异常。此决策的语义基础：零向量无法归一化（`normalize(zero)` 在 Vec3 版本下因 `<=` 保护分支返回零向量本身），基于零轴构造的旋转四元数为 `(0, 0, 0, cos(halfAngle))`——若 `angle` 非零则非单位四元数（无法直接使用），若 `angle` 为零则 `cos(0) = 1` 但分量均为零仍非有效四元数。返回单位四元数是最安全且无副作用的选择（单位四元数表示"无旋转"，不会引入意外的几何变换）。此行为与 GLM 1.0.3 的零轴处理一致——GLM 内部通过 `normalize(zero)` 传播零值后，cross(zero, q) = 0 导致最终旋转退化为原 q，但因 normalize 自身返回零向量，实际计算路径存在数值不确定性。仓颉实现采用显式零值检测（`length(axis) <= T(0)`）直接返回单位四元数，行为更确定。测试 `testRotateZeroAxis` 验证此行为 |
 
 ---
 

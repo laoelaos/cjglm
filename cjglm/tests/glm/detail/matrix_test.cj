@@ -255,69 +255,332 @@ func testOuterProductVec4Vec4(): Unit {
 }
 
 @Test
-func testDeterminantMat2x2Stub(): Unit {
+func testDeterminantMat2x2(): Unit {
     let m = Mat2x2<Int64, Defaultp>(1, 2, 3, 4)
-    try {
-        determinant(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+    @Expect(determinant(m), Int64(-2))
 }
 
 @Test
-func testDeterminantMat3x3Stub(): Unit {
-    let m = Mat3x3<Int64, Defaultp>(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    try {
-        determinant(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+func testDeterminantMat3x3(): Unit {
+    let m = Mat3x3<Int64, Defaultp>(1, 2, 3, 4, 5, 6, 7, 8, 10)
+    @Expect(determinant(m), Int64(-3))
 }
 
 @Test
-func testDeterminantMat4x4Stub(): Unit {
-    let m = Mat4x4<Int64, Defaultp>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
-    try {
-        determinant(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+func testDeterminantMat4x4(): Unit {
+    let m = Mat4x4<Int64, Defaultp>(1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 0, 4)
+    @Expect(determinant(m), Int64(24))
 }
 
 @Test
-func testInverseMat2x2Stub(): Unit {
-    let m = Mat2x2<Int64, Defaultp>(1, 2, 3, 4)
-    try {
-        inverse(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+func testDeterminantMat2x2Float32(): Unit {
+    let m = Mat2x2<Float32, Defaultp>(Float32(1.5), Float32(2.5), Float32(3.5), Float32(4.5))
+    let det = determinant(m)
+    @Expect(det, Float32(1.5) * Float32(4.5) - Float32(3.5) * Float32(2.5))
 }
 
 @Test
-func testInverseMat3x3Stub(): Unit {
-    let m = Mat3x3<Int64, Defaultp>(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    try {
-        inverse(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+func testDeterminantMat2x2Float64(): Unit {
+    let m = Mat2x2<Float64, Defaultp>(Float64(1.5), Float64(2.5), Float64(3.5), Float64(4.5))
+    let det = determinant(m)
+    @Expect(det, Float64(1.5) * Float64(4.5) - Float64(3.5) * Float64(2.5))
 }
 
 @Test
-func testInverseMat4x4Stub(): Unit {
-    let m = Mat4x4<Int64, Defaultp>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
-    try {
-        inverse(m)
-        @Expect(false, true)
-    } catch (e: Exception) {
-        @Expect(e.message, "stub")
-    }
+func testDeterminantMat3x3Float32(): Unit {
+    let m = Mat3x3<Float32, Defaultp>(Float32(1.0), Float32(2.0), Float32(3.0), Float32(4.0), Float32(5.0), Float32(6.0), Float32(7.0), Float32(8.0), Float32(10.0))
+    let det = determinant(m)
+    @Expect(det, Float32(1.0)*(Float32(5.0)*Float32(10.0)-Float32(6.0)*Float32(8.0))-Float32(2.0)*(Float32(4.0)*Float32(10.0)-Float32(6.0)*Float32(7.0))+Float32(3.0)*(Float32(4.0)*Float32(8.0)-Float32(5.0)*Float32(7.0)))
+}
+
+@Test
+func testDeterminantMat3x3Float64(): Unit {
+    let m = Mat3x3<Float64, Defaultp>(Float64(1.0), Float64(2.0), Float64(3.0), Float64(4.0), Float64(5.0), Float64(6.0), Float64(7.0), Float64(8.0), Float64(10.0))
+    let det = determinant(m)
+    @Expect(det, Float64(1.0)*(Float64(5.0)*Float64(10.0)-Float64(6.0)*Float64(8.0))-Float64(2.0)*(Float64(4.0)*Float64(10.0)-Float64(6.0)*Float64(7.0))+Float64(3.0)*(Float64(4.0)*Float64(8.0)-Float64(5.0)*Float64(7.0)))
+}
+
+@Test
+func testDeterminantMat4x4Float32(): Unit {
+    let m = Mat4x4<Float32, Defaultp>(Float32(1.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(2.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(3.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(0.0), Float32(4.0))
+    let det = determinant(m)
+    @Expect(det, Float32(1.0)*Float32(2.0)*Float32(3.0)*Float32(4.0))
+}
+
+@Test
+func testDeterminantMat4x4Float64(): Unit {
+    let m = Mat4x4<Float64, Defaultp>(Float64(1.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(2.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(3.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(0.0), Float64(4.0))
+    let det = determinant(m)
+    @Expect(det, Float64(1.0)*Float64(2.0)*Float64(3.0)*Float64(4.0))
+}
+
+@Test
+func testInverseMat2x2(): Unit {
+    let m = Mat2x2<Float32, Defaultp>(Float32(1), Float32(2), Float32(3), Float32(4))
+    let inv = inverse(m)
+    let c0x = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y
+    let c0y = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y
+    let c1x = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y
+    let c1y = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y
+    let eps = Float32(1.0e-5)
+    @Expect(abs(c0x - Float32(1)) < eps, true)
+    @Expect(abs(c0y) < eps, true)
+    @Expect(abs(c1x) < eps, true)
+    @Expect(abs(c1y - Float32(1)) < eps, true)
+}
+
+@Test
+func testInverseMat3x3(): Unit {
+    let one = Float32(1)
+    let m = Mat3x3<Float32, Defaultp>(one, one, one, one, one, one, one, one, one)
+    // singular matrix (all ones), inverse should produce NaN
+    let inv = inverse(m)
+    // compute m * inv component by component
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z
+    @Expect(r00 != r00, true)
+}
+
+@Test
+func testInverseMat4x4(): Unit {
+    let one = Float32(1)
+    let m = Mat4x4<Float32, Defaultp>.identity(one)
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z + m.c3.x * inv.c0.w
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y + m.c2.x * inv.c1.z + m.c3.x * inv.c1.w
+    let r02 = m.c0.x * inv.c2.x + m.c1.x * inv.c2.y + m.c2.x * inv.c2.z + m.c3.x * inv.c2.w
+    let r03 = m.c0.x * inv.c3.x + m.c1.x * inv.c3.y + m.c2.x * inv.c3.z + m.c3.x * inv.c3.w
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y + m.c2.y * inv.c0.z + m.c3.y * inv.c0.w
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z + m.c3.y * inv.c1.w
+    let r12 = m.c0.y * inv.c2.x + m.c1.y * inv.c2.y + m.c2.y * inv.c2.z + m.c3.y * inv.c2.w
+    let r13 = m.c0.y * inv.c3.x + m.c1.y * inv.c3.y + m.c2.y * inv.c3.z + m.c3.y * inv.c3.w
+    let r20 = m.c0.z * inv.c0.x + m.c1.z * inv.c0.y + m.c2.z * inv.c0.z + m.c3.z * inv.c0.w
+    let r21 = m.c0.z * inv.c1.x + m.c1.z * inv.c1.y + m.c2.z * inv.c1.z + m.c3.z * inv.c1.w
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z + m.c3.z * inv.c2.w
+    let r23 = m.c0.z * inv.c3.x + m.c1.z * inv.c3.y + m.c2.z * inv.c3.z + m.c3.z * inv.c3.w
+    let r30 = m.c0.w * inv.c0.x + m.c1.w * inv.c0.y + m.c2.w * inv.c0.z + m.c3.w * inv.c0.w
+    let r31 = m.c0.w * inv.c1.x + m.c1.w * inv.c1.y + m.c2.w * inv.c1.z + m.c3.w * inv.c1.w
+    let r32 = m.c0.w * inv.c2.x + m.c1.w * inv.c2.y + m.c2.w * inv.c2.z + m.c3.w * inv.c2.w
+    let r33 = m.c0.w * inv.c3.x + m.c1.w * inv.c3.y + m.c2.w * inv.c3.z + m.c3.w * inv.c3.w
+    let eps = Float32(1.0e-5)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r02) < eps, true)
+    @Expect(abs(r03) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r12) < eps, true)
+    @Expect(abs(r13) < eps, true)
+    @Expect(abs(r20) < eps, true)
+    @Expect(abs(r21) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+    @Expect(abs(r23) < eps, true)
+    @Expect(abs(r30) < eps, true)
+    @Expect(abs(r31) < eps, true)
+    @Expect(abs(r32) < eps, true)
+    @Expect(abs(r33 - one) < eps, true)
+}
+
+@Test
+func testInverseMat4x4Full(): Unit {
+    let one = Float32(1)
+    let m = Mat4x4<Float32, Defaultp>(one, one, one, one, one, Float32(2), Float32(3), Float32(4), one, Float32(4), Float32(9), Float32(16), one, Float32(8), Float32(27), Float32(64))
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z + m.c3.x * inv.c0.w
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y + m.c2.x * inv.c1.z + m.c3.x * inv.c1.w
+    let r02 = m.c0.x * inv.c2.x + m.c1.x * inv.c2.y + m.c2.x * inv.c2.z + m.c3.x * inv.c2.w
+    let r03 = m.c0.x * inv.c3.x + m.c1.x * inv.c3.y + m.c2.x * inv.c3.z + m.c3.x * inv.c3.w
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y + m.c2.y * inv.c0.z + m.c3.y * inv.c0.w
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z + m.c3.y * inv.c1.w
+    let r12 = m.c0.y * inv.c2.x + m.c1.y * inv.c2.y + m.c2.y * inv.c2.z + m.c3.y * inv.c2.w
+    let r13 = m.c0.y * inv.c3.x + m.c1.y * inv.c3.y + m.c2.y * inv.c3.z + m.c3.y * inv.c3.w
+    let r20 = m.c0.z * inv.c0.x + m.c1.z * inv.c0.y + m.c2.z * inv.c0.z + m.c3.z * inv.c0.w
+    let r21 = m.c0.z * inv.c1.x + m.c1.z * inv.c1.y + m.c2.z * inv.c1.z + m.c3.z * inv.c1.w
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z + m.c3.z * inv.c2.w
+    let r23 = m.c0.z * inv.c3.x + m.c1.z * inv.c3.y + m.c2.z * inv.c3.z + m.c3.z * inv.c3.w
+    let r30 = m.c0.w * inv.c0.x + m.c1.w * inv.c0.y + m.c2.w * inv.c0.z + m.c3.w * inv.c0.w
+    let r31 = m.c0.w * inv.c1.x + m.c1.w * inv.c1.y + m.c2.w * inv.c1.z + m.c3.w * inv.c1.w
+    let r32 = m.c0.w * inv.c2.x + m.c1.w * inv.c2.y + m.c2.w * inv.c2.z + m.c3.w * inv.c2.w
+    let r33 = m.c0.w * inv.c3.x + m.c1.w * inv.c3.y + m.c2.w * inv.c3.z + m.c3.w * inv.c3.w
+    let eps = Float32(1.0e-4)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r02) < eps, true)
+    @Expect(abs(r03) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r12) < eps, true)
+    @Expect(abs(r13) < eps, true)
+    @Expect(abs(r20) < eps, true)
+    @Expect(abs(r21) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+    @Expect(abs(r23) < eps, true)
+    @Expect(abs(r30) < eps, true)
+    @Expect(abs(r31) < eps, true)
+    @Expect(abs(r32) < eps, true)
+    @Expect(abs(r33 - one) < eps, true)
+}
+
+@Test
+func testInverseMat2x2Float32(): Unit {
+    let one = Float32(1)
+    let m = Mat2x2<Float32, Defaultp>(Float32(2), Float32(3), Float32(5), Float32(7))
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y
+    let eps = Float32(1.0e-5)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+}
+
+@Test
+func testInverseMat2x2Float64(): Unit {
+    let one = Float64(1)
+    let m = Mat2x2<Float64, Defaultp>(Float64(2), Float64(3), Float64(5), Float64(7))
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y
+    let eps = Float64(1.0e-10)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+}
+
+@Test
+func testInverseMat3x3Float32(): Unit {
+    let one = Float32(1)
+    let m = Mat3x3<Float32, Defaultp>(Float32(2), Float32(3), Float32(1), Float32(5), Float32(7), Float32(0), Float32(1), Float32(2), Float32(3))
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y + m.c2.x * inv.c1.z
+    let r02 = m.c0.x * inv.c2.x + m.c1.x * inv.c2.y + m.c2.x * inv.c2.z
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y + m.c2.y * inv.c0.z
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z
+    let r12 = m.c0.y * inv.c2.x + m.c1.y * inv.c2.y + m.c2.y * inv.c2.z
+    let r20 = m.c0.z * inv.c0.x + m.c1.z * inv.c0.y + m.c2.z * inv.c0.z
+    let r21 = m.c0.z * inv.c1.x + m.c1.z * inv.c1.y + m.c2.z * inv.c1.z
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z
+    let eps = Float32(1.0e-4)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r02) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r12) < eps, true)
+    @Expect(abs(r20) < eps, true)
+    @Expect(abs(r21) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+}
+
+@Test
+func testInverseMat3x3Float64(): Unit {
+    let one = Float64(1)
+    let m = Mat3x3<Float64, Defaultp>(Float64(2), Float64(3), Float64(1), Float64(5), Float64(7), Float64(0), Float64(1), Float64(2), Float64(3))
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z
+    let r01 = m.c0.x * inv.c1.x + m.c1.x * inv.c1.y + m.c2.x * inv.c1.z
+    let r02 = m.c0.x * inv.c2.x + m.c1.x * inv.c2.y + m.c2.x * inv.c2.z
+    let r10 = m.c0.y * inv.c0.x + m.c1.y * inv.c0.y + m.c2.y * inv.c0.z
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z
+    let r12 = m.c0.y * inv.c2.x + m.c1.y * inv.c2.y + m.c2.y * inv.c2.z
+    let r20 = m.c0.z * inv.c0.x + m.c1.z * inv.c0.y + m.c2.z * inv.c0.z
+    let r21 = m.c0.z * inv.c1.x + m.c1.z * inv.c1.y + m.c2.z * inv.c1.z
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z
+    let eps = Float64(1.0e-10)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r01) < eps, true)
+    @Expect(abs(r02) < eps, true)
+    @Expect(abs(r10) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r12) < eps, true)
+    @Expect(abs(r20) < eps, true)
+    @Expect(abs(r21) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+}
+
+@Test
+func testInverseMat4x4Float32(): Unit {
+    let one = Float32(1)
+    let m = Mat4x4<Float32, Defaultp>.identity(one)
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z + m.c3.x * inv.c0.w
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z + m.c3.y * inv.c1.w
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z + m.c3.z * inv.c2.w
+    let r33 = m.c0.w * inv.c3.x + m.c1.w * inv.c3.y + m.c2.w * inv.c3.z + m.c3.w * inv.c3.w
+    let eps = Float32(1.0e-5)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+    @Expect(abs(r33 - one) < eps, true)
+}
+
+@Test
+func testInverseMat4x4Float64(): Unit {
+    let one = Float64(1)
+    let m = Mat4x4<Float64, Defaultp>.identity(one)
+    let inv = inverse(m)
+    let r00 = m.c0.x * inv.c0.x + m.c1.x * inv.c0.y + m.c2.x * inv.c0.z + m.c3.x * inv.c0.w
+    let r11 = m.c0.y * inv.c1.x + m.c1.y * inv.c1.y + m.c2.y * inv.c1.z + m.c3.y * inv.c1.w
+    let r22 = m.c0.z * inv.c2.x + m.c1.z * inv.c2.y + m.c2.z * inv.c2.z + m.c3.z * inv.c2.w
+    let r33 = m.c0.w * inv.c3.x + m.c1.w * inv.c3.y + m.c2.w * inv.c3.z + m.c3.w * inv.c3.w
+    let eps = Float64(1.0e-10)
+    @Expect(abs(r00 - one) < eps, true)
+    @Expect(abs(r11 - one) < eps, true)
+    @Expect(abs(r22 - one) < eps, true)
+    @Expect(abs(r33 - one) < eps, true)
+}
+
+@Test
+func testInverseSingularMat2x2NaN(): Unit {
+    let m = Mat2x2<Float32, Defaultp>(Float32(1), Float32(1), Float32(1), Float32(1))
+    let inv = inverse(m)
+    @Expect(inv.c0.x != inv.c0.x, true)
+    @Expect(inv.c0.y != inv.c0.y, true)
+    @Expect(inv.c1.x != inv.c1.x, true)
+    @Expect(inv.c1.y != inv.c1.y, true)
+}
+
+@Test
+func testInverseSingularMat3x3NaN(): Unit {
+    let m = Mat3x3<Float32, Defaultp>(Float32(1), Float32(1), Float32(1), Float32(1), Float32(1), Float32(1), Float32(1), Float32(1), Float32(1))
+    let inv = inverse(m)
+    @Expect(inv.c0.x != inv.c0.x, true)
+    @Expect(inv.c0.y != inv.c0.y, true)
+    @Expect(inv.c0.z != inv.c0.z, true)
+    @Expect(inv.c1.x != inv.c1.x, true)
+    @Expect(inv.c1.y != inv.c1.y, true)
+    @Expect(inv.c1.z != inv.c1.z, true)
+    @Expect(inv.c2.x != inv.c2.x, true)
+    @Expect(inv.c2.y != inv.c2.y, true)
+    @Expect(inv.c2.z != inv.c2.z, true)
+}
+
+@Test
+func testInverseSingularMat4x4NaN(): Unit {
+    let m = Mat4x4<Float64, Defaultp>(Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1), Float64(1))
+    let inv = inverse(m)
+    @Expect(inv.c0.x != inv.c0.x, true)
+    @Expect(inv.c0.y != inv.c0.y, true)
+    @Expect(inv.c0.z != inv.c0.z, true)
+    @Expect(inv.c0.w != inv.c0.w, true)
+    @Expect(inv.c1.x != inv.c1.x, true)
+    @Expect(inv.c1.y != inv.c1.y, true)
+    @Expect(inv.c1.z != inv.c1.z, true)
+    @Expect(inv.c1.w != inv.c1.w, true)
+    @Expect(inv.c2.x != inv.c2.x, true)
+    @Expect(inv.c2.y != inv.c2.y, true)
+    @Expect(inv.c2.z != inv.c2.z, true)
+    @Expect(inv.c2.w != inv.c2.w, true)
+    @Expect(inv.c3.x != inv.c3.x, true)
+    @Expect(inv.c3.y != inv.c3.y, true)
+    @Expect(inv.c3.z != inv.c3.z, true)
+    @Expect(inv.c3.w != inv.c3.w, true)
 }
 
 @Test

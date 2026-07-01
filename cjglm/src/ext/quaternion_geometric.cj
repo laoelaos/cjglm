@@ -1,11 +1,6 @@
 package glm.ext
-import glm.detail.{ Quat, Qualifier }
-import std.math.{ Number, FloatingPoint, sqrt }
-
-private func sqrtT<T>(x: T): T where T <: FloatingPoint<T> {
-    let x64 = (x as Float64).getOrThrow()
-    (sqrt(x64) as T).getOrThrow()
-}
+import glm.detail.{ Quat, Qualifier, sqrtT }
+import std.math.{ Number, FloatingPoint }
 
 public func dot<T, Q>(x: Quat<T, Q>, y: Quat<T, Q>): T
   where T <: FloatingPoint<T>, Q <: Qualifier {
